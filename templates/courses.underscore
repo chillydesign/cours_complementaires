@@ -1,0 +1,30 @@
+<ul class="courses row">
+
+     <% // repeat courses  %>
+     <%  _.each(courses,function(cours,key,list){  %>
+
+	<li class="single_cours col-sm-4 col-md-4   " >
+		<div class="single_cours_inner cours_<%= cours.slug %>">
+		<a  data-url="<%= cours.api_url  %>" class="course_link"  data-featherlight="#cours_container"   href="#">
+		<h5><%= cours.post_title %></h5>
+		<p><%= cours.description %></p>
+    <% if ( cours.categories.length > 0 ) {%>
+		<p style="font-weight: bold"> <%= cours.categories[0].name %></p>
+    <% } %>
+    </a>
+		</div>
+	</li>
+	 <%= cours.new_row %>
+
+
+<!--<%= cours.guid  %> -->
+
+
+	<% }) %>
+
+
+
+</ul>
+
+
+<a href="#" id="back_to_top">&#8593;</a>

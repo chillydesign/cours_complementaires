@@ -1,0 +1,100 @@
+<div class="container">
+	<h1><%= cours.post_title %></h1>
+	<%  if (cours.school.length > 0) { %><h3> <%= cours.school[0].post_excerpt %> </h3><% } %>
+
+	<div class="row">
+
+
+		<div class="col-sm-6 ">
+
+
+
+			<%= cours.description %>
+
+			<%= cours.inscription %>
+
+		</div>
+
+		<div class="col-sm-4 col-sm-push-1">
+			
+
+			<p><strong>Catégorie:</strong> <%= cours.cat %></p>
+			<p><strong>Code:</strong> <%= cours.code %></p>
+
+
+			<%= cours.extra %>
+
+
+			<% if (cours.ecolage != null  && cours.ecolage != 'none' ) {  %>
+			<p><strong>Ecolage:</strong> <%= cours.ecolage %></p>
+				<% } %>
+
+			<div class="school_image school_image_ <%= cours.school[0].post_name %>"></div>
+
+
+		</div>
+
+
+	</div>
+
+
+
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Professeur(s)</th>
+				<th>Horaire</th>
+				<th>Lieu</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<%  _.each(cours.times,function(time,key,list){  %>
+			<tr>
+				<td>
+
+					
+					<%  if  (time.teachers.length > 0) { %>
+					
+					<%= _.map(time.teachers, function(t) { return t.post_title;  }).join(', ')    %>
+				<!--	<%  _.each(time.teachers,function(teacher,key,list){  %>
+				<% teacher.post_title %>,  
+				<% }) %> -->
+				<% } %>
+
+			</td>
+
+			<td>
+				
+				<% if ( time['time']  != '' ) { %>
+				<%= time['time'] %>
+				<% } %>
+
+			</td>
+			
+			<td>
+				<% if (time['location'] != '' ) { %>
+				<% if (time['location'].post_title != '' ) { %>
+			
+				<% if (typeof  time['location'].zone != 'undefined' ) { %>
+				<% if (  time['location'].zone.length > 0) { %>
+				<%= time['location'].zone[0].post_title   %> - 
+				<% } %>
+				<% } %>
+				<%= time['location'].post_title %>
+				<% } %>
+				<% } %>
+			</td>
+			
+
+		</tr>
+
+		<% }) %>
+	</tbody>
+</table>
+
+
+
+</div>
+
