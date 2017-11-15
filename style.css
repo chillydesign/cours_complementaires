@@ -473,7 +473,7 @@ header form {
 	display: inline-block;
 	height: 50px;
 	width:100%;
-	max-width: 600px;
+	max-width: 700px;
 	margin:-20px auto 80px;
 }
 
@@ -490,7 +490,7 @@ header form #cours_search {
 
 #cours_search {
 	left: 0;
-	width:34%;
+	width:28%;
 	min-width: initial;
 
 }
@@ -511,7 +511,7 @@ header form #cours_search {
 
 .search_button {
 	display: inline-block;
-	width: 22%;
+	width: 16%;
 	position: absolute;
 	padding:0 15px;
 	line-height: 50px;
@@ -520,9 +520,10 @@ header form #cours_search {
 }
 
 
-#category_button {left:34%;}
-#location_button {left:56%;}
-#school_button {left:78%;}
+#category_button {left:28%;}
+#location_button {left:46%;}
+#school_button {left:64%;}
+#professeur_button {left:82%;}
 
 #reset_course_form {
 	text-align: center;

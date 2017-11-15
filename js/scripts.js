@@ -370,6 +370,7 @@
 			var $school = new Array();
 			var $location = new Array();
 			var $cat = new Array();
+			var $prof = new Array();
 
 			$search_checks.each(function(){
 				var $this = $(this);
@@ -382,14 +383,17 @@
 						$location.push(   parseInt($this.val())  )
 					} else if( $check_type =='category' ){
 						$cat.push(   parseInt($this.val())  )
+					} else if( $check_type =='professeur' ){
+						$prof.push(   parseInt($this.val())  )
 					}
 
 				};
 
 			});
-			var $school = _.filter($school, function(num){ return  num >0; });
-			var $location = _.filter($location, function(num){ return  num >0; });
-			var $cat = _.filter($cat, function(num){ return  num >0; });
+			$school = _.filter($school, function(num){ return  num >0; });
+			$location = _.filter($location, function(num){ return  num >0; });
+			$cat = _.filter($cat, function(num){ return  num >0; });
+			$prof = _.filter($prof, function(num){ return  num >0; });
 
 
 
@@ -402,7 +406,7 @@
 
 
 
-			var s_courses =  processCourses(courses, $search_val, $cat , $location, $school );
+			var s_courses =  processCourses(courses, $search_val, $cat , $location, $school, $prof );
 
 			var sparams = [ $cat,   ]
 
@@ -427,7 +431,7 @@
 		}
 
 
-		function processCourses(courses, search, category, location, school){
+		function processCourses(courses, search, category, location, school, prof){
 
 
 
@@ -477,8 +481,11 @@
 					return  ( _.intersection(    school  ,  c.school ).length == 0 );
 				});
 			}
-
-
+            if (prof && prof.length > 0) {
+				var courses = _.reject(  courses ,  function(c) {
+					return  ( _.intersection(    prof  ,  c.professuers ).length == 0 );
+				});
+			}
 
 
 			var courses =  _.toArray(courses)  ;//  CONVERT  OBJECT TO ARRAY

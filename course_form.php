@@ -5,6 +5,7 @@
 	<a href="#" data-box="#category_box"  class="search_button" id="category_button">Catégorie</a>
 	<a href="#" data-box="#location_box" class="search_button"  id="location_button">Lieu</a>
 	<a href="#" data-box="#school_box"  class="search_button" id="school_button">École</a>
+	<a href="#" data-box="#professeur_box"  class="search_button" id="professeur_button">Professeurs</a>
 
 	<a href="#" id="reset_course_form">réinitialiser</a>
 
@@ -16,7 +17,6 @@
 
 <!-- 	<select  multiple="multiple"  name="categorie" id="categorie_select">
 		<option value="">Toutes les catégories</option>
-			<option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
 	</select> -->
 	<!-- <a href="#" class="close_box">X</a> -->
 	</div>
@@ -30,7 +30,6 @@
 	<?php endforeach; ?>
 <!-- 	<select  multiple="multiple"  name="location" id="location_select">
 			<option value="">Tous les lieux</option>
-			<option value="<?php echo $zone->ID; ?>"><?php echo $zone->post_title; ?></option>
 	</select> -->
 <!-- 	<a href="#" class="close_box">X</a> -->
 </div>
@@ -43,13 +42,19 @@
 
 <!-- 	<select  multiple="multiple" name="location" id="school_select"  >
 		<option value="">Toutes les écoles</option>
-		
-			<option value="<?php echo $school->ID; ?>"><?php echo $school->post_title; ?></option>
-
 	</select> -->
 
 <!-- 	<a href="#" class="close_box">X</a> -->
 </div>
+
+
+<div id="professeur_box" class="search_box">
+    <?php $professeurs = get_posts(array('post_type'  => 'professeur', 'posts_per_page' => -1  ) );  ?>
+	<?php foreach ($professeurs as $professeur)  : ?>
+		<label><input type="checkbox" class="search_check" value="<?php echo $professeur->ID; ?>" data-field="professeur" /> <?php echo $professeur->post_title; ?>   </label>
+	<?php endforeach; ?>
+</div>
+
 
 
     </form>
