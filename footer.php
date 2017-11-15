@@ -25,7 +25,7 @@
 <script type="text/javascript" src="<?php echo $tdu; ?>/js/unslider-min.js"></script>
 <script type="text/javascript" src="<?php echo $tdu; ?>/js/matchHeight.min.js"></script>
 <script type="text/javascript" src="<?php echo $tdu; ?>/js/featherlight.min.js"></script>
-<script type="text/javascript" src="<?php echo $tdu; ?>/js/scripts.js?v=2.9"></script>
+<script type="text/javascript" src="<?php echo $tdu; ?>/js/scripts.js?v=2.8"></script>
 
 <!-- analytics -->
 <script>
