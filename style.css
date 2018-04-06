@@ -373,7 +373,7 @@ a#page_title {
     left: 0;
     right: 0;
 }
-#svg_16, #svg_17, #svg_18 {
+#svg_16, #svg_17, #svg_18, #svg_19 {
 	background: url('img/17.svg') no-repeat center center;
 	background-size: 90%;
 	position: absolute;
@@ -387,6 +387,11 @@ a#page_title {
 }
 #svg_18 {
 	background-image: url('img/18.svg')	;
+	left:-15%;
+}
+
+#svg_19 {
+	background-image: url('img/19.svg')	;
 	left:25%;
 }
 
@@ -394,18 +399,18 @@ a#page_title {
 
 
 @media (min-width:768px){
-	#svg_17 {left:-10%;background-size: 44%;}
-	#svg_18 {left:10%;background-size: 44%;}
+	#svg_18 {left:-17%;background-size: 44%;}
+	#svg_19 {left:17%;background-size: 44%;}
 }
 
-.home #svg_17 {
+.home #svg_18 {
 	-o-animation:  slideInLeft 4s forwards;
 	-ms-animation:  slideInLeft 4s forwards;
 	-moz-animation:  slideInLeft 4s forwards;
 	-webkit-animation:  slideInLeft 4s forwards;
 	animation:  slideInLeft 4s forwards;
 }
-.home #svg_18 {
+.home #svg_19 {
 	-o-animation:  slideInRight 4s forwards;
 	-ms-animation:  slideInRight 4s forwards;
 	-moz-animation:  slideInRight 4s forwards;

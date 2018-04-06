@@ -49,7 +49,7 @@
 
 
 <div id="professeur_box" class="search_box">
-    <?php $professeurs = get_posts(array('post_type'  => 'professeur',  'orderby'=> 'post_title' , 'posts_per_page' => -1  ) );  ?>
+    <?php $professeurs = get_posts(array('post_type'  => 'professeur',  'order' =>'ASC' , 'orderby'=> 'post_title' , 'posts_per_page' => -1  ) );  ?>
 	<?php foreach ($professeurs as $professeur)  : ?>
 		<label><input type="checkbox" class="search_check" value="<?php echo $professeur->ID; ?>" data-field="professeur" /> <?php echo $professeur->post_title; ?>   </label>
 	<?php endforeach; ?>

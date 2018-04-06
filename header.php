@@ -46,7 +46,7 @@
 
 
     <?php if( is_front_page()  ) : ?>
-  	
+
   	  <h1><a id="page_title" href="<?php echo site_url(); ?>"> cours complémentaires</a></h1>
       <span style="display:none">ecoles de musique de geneve</span>
 
@@ -65,8 +65,8 @@
 
 
   <div id="svgs">
-    <div id="svg_17"></div>
     <div id="svg_18"></div>
+    <div id="svg_19"></div>
 </div>
  </header>
 
@@ -74,9 +74,4 @@
 
     <nav id="navigation_menu" role="navigation">
        <ul><?php chilly_nav('primary-navigation'); ?></ul>
-    </nav> 
-
-
-
-
-
+    </nav>

@@ -181,7 +181,7 @@ function html5blank_styles()
   // wp_register_style('reset', get_template_directory_uri() . '/reset.css', array(), '1.1', 'all');
   // wp_enqueue_style('reset'); // Enqueue it!
 
-  wp_register_style('style', get_template_directory_uri() . '/style.css', array(), '2.7', 'all');
+  wp_register_style('style', get_template_directory_uri() . '/style.css', array(), '2.9', 'all');
   wp_enqueue_style('style'); // Enqueue it!
 }
 
@@ -542,6 +542,24 @@ function remove_admin_bar_links(){
     }
   }
   add_action( 'init', 'wpcodex_set_capabilities' );
+
+
+
+
+
+if(!function_exists('chilly_school_letters')) {
+  function chilly_school_letters()
+    {
+      return array(  4=> 'A', 7=>'B', 38=>'C' );
+    }
+}
+
+if(!function_exists('chilly_category_letters')) {
+  function chilly_category_letters()
+    {
+      return array(  3 => 'R', 4 => 'S', 5 => 'T', 6 => 'U', 7 => 'V', 8 => 'W', 9 => 'X', 10 => 'Y', 11 => 'Z' );
+    }
+}
 
 
   ?>
