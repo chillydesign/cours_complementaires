@@ -976,7 +976,6 @@ function request_form_shortcode($atts , $content = null) {
     <p style="margin-bottom:-15px;">Facture payable en :</p>
     <select id="facture" name="facture">
     <option value="1 fois">1 fois</option>
-    <option value="2 fois">2 fois</option>
     <option value="3 fois">3 fois</option>
     </select>
     <br/>
@@ -1010,7 +1009,7 @@ function request_form_shortcode($atts , $content = null) {
     $rq_frm .= '<div class="group_visible">';
     $rq_frm .= '<div class="field" style="margin:40px 0 0"><p>L’institution utilise des images de groupe d’élèves ou portrait d’élève (photos, vidéos), prises lors des cours et manifestations sur lesquelles pourront apparaître votre enfant.<br>Ces images sont utilisées pour les brochures, affiches et/ou site web de l’institution à des fins informatives et promotionnelles.<br>Le parent ou le représentant légal de l’élève concerné autorise donc le CPMDT à réutiliser l’image de ce dernier conformément à cette clause et, si l’élève a la maturité nécessaire, en accord ou concertation avec lui.<br>Pour toute demande d’accès, de rectification ou de suppression d’une photo ou d’une vidéo, merci de nous le signaler par e-mail: <a href="mailto:"administration@conservatoirepopulaire.ch" target="_blank">administration@conservatoirepopulaire.ch</a></p></div>';
 
-    $rq_frm .= '<div class="field" style="margin:0px 0 40px"><label><input id="agree_terms" type="checkbox" class="radio_input" value="agree" name="terms" /> Je certifie avoir pris connaissance des <a href="'. get_home_url() . '/wp-content/uploads/2017/02/inscription_cours_complementaires_2016-2017_verso-version-site-CC.pdf" target="_blank">Termes et Conditions générales</a>  </label> </div>';
+    $rq_frm .= '<div class="field" style="margin:0px 0 40px"><label><input id="agree_terms" type="checkbox" class="radio_input" value="agree" name="terms" /> Je certifie avoir pris connaissance des <a href="'. get_home_url() . '/wp-content/uploads/2018/04/Conditions_2018-2019.pdf" target="_blank">Termes et Conditions générales</a>  </label> </div>';
     $rq_frm .= '</div>';
 
 
