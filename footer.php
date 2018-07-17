@@ -20,7 +20,7 @@
 
 <script type="text/javascript" src="<?php echo $tdu; ?>/js/underscore.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="//maps.google.com/maps/api/js?key=AIzaSyC-BDJZU14ltCrYRPei33a4ZSQfJqRbxNY"></script>
+<script src="//maps.google.com/maps/api/js?key=AIzaSyAxQfqRqtPLAW4BolFMCxTiv9y--R8CXdU"></script>
 <script type="text/javascript" src="<?php echo $tdu; ?>/js/lib/modernizr-2.7.1.min.js"></script>
 <script type="text/javascript" src="<?php echo $tdu; ?>/js/unslider-min.js"></script>
 <script type="text/javascript" src="<?php echo $tdu; ?>/js/matchHeight.min.js"></script>
