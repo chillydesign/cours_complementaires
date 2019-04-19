@@ -89,7 +89,7 @@ function add_download_link($which){
 
         } else if (is_post_type_archive('cours') ) {
 
-                $download_link = get_home_url() . '/api/v1/?courses';
+                $download_link = get_home_url() . '/api/v1/?courses_export';
                 echo '<div class="alignleft actions"><a class="action button-primary button" href="'. $download_link .'">Télécharger CSV</a></div>';
         }
 
