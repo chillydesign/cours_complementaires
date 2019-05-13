@@ -1483,3 +1483,17 @@ img {width: 100%; height:auto;}
 .nicer_currently_selected.focussed {
 	border-color: #179b29
 }
+
+
+.single_all_courses {
+    margin-bottom: 150px;
+}
+.single_all_courses a.inscription_button {
+display: none;
+}
+.single_all_courses th {
+    background: #222;
+}
+.single_all_courses td {
+    border-bottom: 1px solid #aaa;
+}

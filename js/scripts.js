@@ -345,7 +345,28 @@
 
 			 });
 
-		}
+		} /// end of if search_url defined
+
+
+
+
+        // show all courses in one big list
+        if (typeof all_courses_url != 'undefined' ) {
+
+
+            $.ajax({
+                url: all_courses_url
+            }).done(function( data ) {
+                // ORIGINAL SET OF COURSES
+                var courses = processAllCourses(data, all_courses_url);
+                var $all_courses_template = $('#all_courses_template').html();
+                var $all_courses_container = $('#all_courses_container');
+                var compiled =  _.template($all_courses_template);
+                $all_courses_container.html(  compiled({ courses:   courses  })  );
+            });
+
+        }/// end of if all_courses_url defined
+
 
 		function displayCourses(courses, courses_container, compiled){
 
@@ -430,6 +451,31 @@
 
 		}
 
+
+
+        function processAllCourses(courses, api_url) {
+            var courses =  _.toArray(courses)  ;//  CONVERT  OBJECT TO ARRAY
+            // PROCESS ARRAY
+            for (var i = 0; i < courses.length ; i++) {
+                var course = courses[i];
+
+                course['proper_url'] = function(){
+                    return '/agenda/?course=' +   this.id ;
+                }
+                if (course.categories) {
+                    if (course.categories.length > 0) {
+                        course['slug'] =    course.categories[0].slug;
+                    }
+                }
+
+                // ADD NEW UL.ROW EVERY 3 POSTS FOR LAYOUT
+                course['new_row'] = ( i % 3 == 2 )  ?  '</ul><ul class="courses row">' : '';
+                course['api_url'] = api_url   + '?course_id=' + course.ID;
+            }
+
+            return courses;
+
+        }
 
 		function processCourses(courses, search, category, location, school, prof){
 

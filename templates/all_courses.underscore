@@ -1,4 +1,8 @@
-<div class="container">
+
+<% // repeat courses  %>
+<%  _.each(courses,function(cours,key,list){  %>
+<div class="single_all_courses">
+<div class="container" >
 	<h1><%= cours.post_title %></h1>
 	<%  if (cours.school.length > 0) { %><h3> <%= cours.school[0].post_excerpt %> </h3><% } %>
 
@@ -16,7 +20,7 @@
 		</div>
 
 		<div class="col-sm-4 col-sm-push-1">
-			
+
 
 			<p><strong>Catégorie:</strong> <%= cours.cat %></p>
 			<p><strong>Code:</strong> <%= cours.code %></p>
@@ -54,39 +58,39 @@
 			<tr>
 				<td>
 
-					
+
 					<%  if  (time.teachers.length > 0) { %>
-					
+
 					<%= _.map(time.teachers, function(t) { return t.post_title;  }).join(', ')    %>
 				<!--	<%  _.each(time.teachers,function(teacher,key,list){  %>
-				<% teacher.post_title %>,  
+				<% teacher.post_title %>,
 				<% }) %> -->
 				<% } %>
 
 			</td>
 
 			<td>
-				
+
 				<% if ( time['time']  != '' ) { %>
 				<%= time['time'] %>
 				<% } %>
 
 			</td>
-			
+
 			<td>
 				<% if (time['location'] != '' ) { %>
 				<% if (time['location'].post_title != '' ) { %>
-			
+
 				<% if (typeof  time['location'].zone != 'undefined' ) { %>
 				<% if (  time['location'].zone.length > 0) { %>
-				<%= time['location'].zone[0].post_title   %> - 
+				<%= time['location'].zone[0].post_title   %> -
 				<% } %>
 				<% } %>
 				<%= time['location'].post_title %>
 				<% } %>
 				<% } %>
 			</td>
-			
+
 
 		</tr>
 
@@ -97,4 +101,5 @@
 
 
 </div>
-
+</div>
+<% }) %>
