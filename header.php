@@ -49,9 +49,9 @@
             <?php endif; ?>
 
 
-            <?php if( is_page_template('template-search.php') ) : ?>
+            <?php if( is_page_template('template-search.php') || is_page_template('template-allcourses.php')   ) : ?>
                 <?php get_template_part('course_form'); ?>
-            <? endif; ?>
+            <?php endif; ?>
 
 
             <div id="svgs">

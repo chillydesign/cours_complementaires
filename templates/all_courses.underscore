@@ -4,7 +4,7 @@
 <div class="single_all_courses">
 <div class="container" >
 	<h1><%= cours.post_title %></h1>
-	<%  if (cours.school.length > 0) { %><h3> <%= cours.school[0].post_excerpt %> </h3><% } %>
+	<%  if (cours.schools.length > 0) { %><h3> <%= cours.schools[0].post_excerpt %> </h3><% } %>
 
 	<div class="row">
 
@@ -33,7 +33,7 @@
 			<p><strong>Ecolage:</strong> <%= cours.ecolage %></p>
 				<% } %>
 
-			<div class="school_image school_image_ <%= cours.school[0].post_name %>"></div>
+			<div class="school_image school_image_ <%= cours.schools[0].post_name %>"></div>
 
 
 		</div>
