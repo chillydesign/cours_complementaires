@@ -181,7 +181,7 @@ function html5blank_styles()
   // wp_register_style('reset', get_template_directory_uri() . '/reset.css', array(), '1.1', 'all');
   // wp_enqueue_style('reset'); // Enqueue it!
 
-  wp_register_style('style', get_template_directory_uri() . '/style.css', array(), '3.3', 'all');
+  wp_register_style('style', get_template_directory_uri() . '/style.css', array(), '3.4', 'all');
   wp_enqueue_style('style'); // Enqueue it!
 }
 

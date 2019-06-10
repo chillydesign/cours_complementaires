@@ -1513,7 +1513,12 @@ display: none;
 
 	.single_all_courses {
         page-break-after: always;
-    }
+	}
+	
+	#bg {
+		outline: 0px !important;
+
+	}
 
 
 }
