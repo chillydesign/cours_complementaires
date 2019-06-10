@@ -1,5 +1,5 @@
 
-    <form method="" action="">
+    <form  class="hide_on_print" method="" action="">
 	<input placeholder="chercher un cours"  type="text" name="k" id="cours_search">
 
 	<a href="#" data-box="#category_box"  class="search_button" id="category_button">Catégorie</a>

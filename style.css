@@ -1498,3 +1498,24 @@ display: none;
 .single_all_courses td {
     border-bottom: 1px solid #aaa;
 }
+
+
+
+
+@media print {
+
+	.hide_on_print {
+		display:none !important;
+		visibility: hidden !important;
+		height: 0;
+		
+	}
+
+	.single_all_courses {
+        page-break-after: always;
+    }
+
+
+}
+
+   
