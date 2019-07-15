@@ -436,38 +436,6 @@
 
 
 
-		function processAllCourses(courses, api_url) {
-			var courses = _.toArray(courses);//  CONVERT  OBJECT TO ARRAY
-			// PROCESS ARRAY
-			for (var i = 0; i < courses.length; i++) {
-				var course = courses[i];
-
-				course['proper_url'] = function() {
-					return '/agenda/?course=' + this.id;
-				}
-				if (course.categories) {
-					if (course.categories.length > 0) {
-						course['slug'] = course.categories[0].slug;
-					}
-				}
-
-				// ADD NEW UL.ROW EVERY 3 POSTS FOR LAYOUT
-				course['new_row'] = (i % 3 == 2) ? '</ul><ul class="courses row">' : '';
-				course['api_url'] = api_url + '?course_id=' + course.ID;
-			}
-
-			console.log(courses);
-
-			// sort courses by category then name if requested
-			if (typeof sort_by_cat_first !== 'undefined') {
-				courses = _.sortBy(courses, 'cat');
-				console.log(courses);
-
-			}
-
-			return courses;
-
-		}
 
 		function processCourses(courses, search, category, location, school, prof) {
 
@@ -551,6 +519,16 @@
 
 
 			}
+
+
+
+			// sort courses by category then name if requested
+			if (typeof sort_by_cat_first !== 'undefined') {
+				courses = _.sortBy(courses, 'cat');
+				console.log(courses);
+
+			}
+
 
 
 			return courses;
