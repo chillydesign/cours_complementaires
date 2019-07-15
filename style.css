@@ -2832,6 +2832,14 @@ img {
   page-break-inside: avoid;
 }
 
+.all_course_title {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #179b29;
+  border-bottom: 2px solid #179b29;
+  page-break-before: always;
+}
+
 .single_all_courses a.inscription_button {
   display: none;
 }
