@@ -5,9 +5,9 @@
 
 <%  if (current_cat !== cours.cat  ) { %>
 
-<div class="single_all_courses">
+<div class="single_all_courses" style="margin: 0 0 0">
 <div class="container">
-	<h1><%= cours.cat %></h1>
+	<h1 style="font-weight: bold;text-transform: uppercase;color: #179b29;border-bottom: 2px solid #179b29;"><%= cours.cat %></h1>
 	</div>
 </div>
 <%  current_cat = cours.cat %>
@@ -15,8 +15,8 @@
 
 <div class="single_all_courses">
 <div class="container" >
-	<h1><%= cours.post_title %></h1>
-	<%  if (cours.schools.length > 0) { %><h3> <%= cours.schools[0].post_excerpt %> </h3><% } %>
+	<h3><%= cours.post_title %></h3>
+	<%  if (cours.schools.length > 0) { %><h5> <%= cours.schools[0].post_excerpt %> </h5><% } %>
 
 	<div class="row">
 
