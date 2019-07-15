@@ -456,10 +456,12 @@
 				course['api_url'] = api_url + '?course_id=' + course.ID;
 			}
 
+			console.log(courses);
 
 			// sort courses by category then name if requested
 			if (typeof sort_by_cat_first !== 'undefined') {
 				courses = _.sortBy(courses, 'cat');
+				console.log(courses);
 
 			}
 
