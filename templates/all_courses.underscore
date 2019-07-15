@@ -9,7 +9,7 @@
 	<div class="row">
 
 
-		<div class="col-sm-6 col-print-8">
+		<div class="col-sm-6 col-print-6">
 
 
 
@@ -19,7 +19,7 @@
 
 		</div>
 
-		<div class="col-sm-4 col-sm-push-1 col-print-4">
+		<div class="col-sm-4 col-sm-push-1 col-print-6">
 
 
 			<p><strong>Catégorie:</strong> <%= cours.cat %></p>

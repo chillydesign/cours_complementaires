@@ -29,7 +29,9 @@
 
 			<?php echo $description; ?>
 
-			<?php if( $school[0]->post_title == 'CPMDT' ) :
+			<?php if( get_field('alternate_url') ) :
+				echo '<p><a target="_blank" href="' . get_field('alternate_url') . '" class="inscription_button">Inscription</a></p>';
+				elseif( $school[0]->post_title == 'CPMDT' ) :
 					echo '<p><a href="' . get_home_url() . '/inscription?course_id=' . $course_id . '" class="inscription_button">Inscription</a></p>';
 				elseif( $school[0]->post_title == 'IJD' ) :
 					echo '<p><a target="_blank" href="http://www.dalcroze.ch/inscription/" class="inscription_button">Inscription sur le site de l’IJD</a></p>';
@@ -41,7 +43,7 @@
 		</div>
 
 		<div class="col-sm-4 col-sm-push-1">
-			
+
 
 			<p><strong>Catégorie:</strong> <?php echo $cat_name ?></p>
 			<p><strong>Code:</strong> <?php echo $course_code ?></p>
@@ -100,20 +102,20 @@
 
 			<td>
 		        <?php  $lieu = get_sub_field('location'); ?>
-		        <?php if($lieu): ?> 
+		        <?php if($lieu): ?>
 		        	<?php $lieu_title = $lieu->post_title; ?>
 			        <?php if($lieu_title != ''){
-			        	 $lieu_id = $lieu->ID; 
+			        	 $lieu_id = $lieu->ID;
 			        	 $zone = get_field('zone', $lieu_id);
 			        	 $zone_title = $zone->post_title;
 
 			        	 if($zone_title){echo $zone_title . ' - ';}
-			        	 echo $lieu_title; 
+			        	 echo $lieu_title;
 			     	} ?>
 		        <?php endif; ?>
 
 			</td>
-				
+
 
 		    <?php endwhile;
 		endif; ?>
