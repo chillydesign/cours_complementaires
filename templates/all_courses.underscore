@@ -7,9 +7,9 @@
 
 <% firstclass = (first_cat) ? 'all_course_title_first' : ''; %>
 
-<div class="single_all_courses <%= firstclass %>" style="margin: 0 0 0">
+<div class="single_all_courses" style="margin: 0 0 0">
 <div class="container">
-	<h1 class="all_course_title  " ><%= cours.cat %></h1>
+	<h1 class="all_course_title  <%= firstclass %> " ><%= cours.cat %></h1>
 	</div>
 </div>
 <% first_cat = false; %>
