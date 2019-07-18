@@ -102,7 +102,7 @@ add_action('after_setup_theme', 'remove_json_api');
 function chilly_nav($menu)
 {
     wp_nav_menu(
-      array(
+        array(
       'theme_location'  => $menu,
       'menu'            => '',
       'container'       => 'div',
