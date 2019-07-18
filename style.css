@@ -2840,6 +2840,10 @@ img {
   page-break-before: always;
 }
 
+.all_course_title_first {
+  page-break-before: avoid;
+}
+
 .single_all_courses a.inscription_button {
   display: none;
 }
@@ -2865,6 +2869,10 @@ img {
     /* DONT BREAK INSIDE COURSE */
     page-break-inside: avoid;
     margin-bottom: 80px;
+  }
+
+  .single_all_courses h3 {
+    margin-top: 30px;
   }
 
   #bg {
