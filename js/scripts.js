@@ -468,8 +468,16 @@
 
 			if (category && category != '') {
 				var courses = _.reject(courses, function(c) {
-					//	return c.categories[0].term_id !=  category
-					return !_.contains(category, c.categories[0].term_id);
+
+					if (typeof c.categories[0].term_id !== 'undefined') {
+						// normal user serach uses this for course id
+						var tid = c.categories[0].term_id;
+					} else {
+						// admin course search uses this for course id
+						var tid = c.categories[0];
+					}
+					// return !_.contains(category, c.categories[0].term_id);
+					return !_.contains(category, tid);
 				});
 			}
 
