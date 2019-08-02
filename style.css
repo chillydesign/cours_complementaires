@@ -2878,15 +2878,21 @@ img {
     /* page-break-after: always; */
     /* DONT BREAK INSIDE COURSE */
     page-break-inside: avoid;
-    margin-bottom: 80px;
+    margin-bottom: 33px;
+    font-size: 90%;
   }
 
   .single_all_courses h3 {
-    padding-top: 20px;
+    padding-top: 13px;
   }
 
   .all_course_title {
-    padding-top: 20px;
+    padding-top: 13px;
+    font-size: 3.3em;
+  }
+
+  table.table {
+    margin: 10px 0;
   }
 
   #bg {
