@@ -4,7 +4,7 @@
 <footer id="footer" class="footer" role="contentinfo">
     <div class="container">
         <div class="row">
-            <p style="line-height:55px" class="col-sm-4">&copy; <?php echo date('Y'); ?>  | <a href="https://webfactor.ch">Website by Webfactor</a></p>
+            <p class="col-sm-4"><a href="https://courscomplementaires.ch/cours-complementaires-impression/"><i class="fa fa-print"></i> Version imprimable</a><br>&copy; <?php echo date('Y'); ?>  | <a href="https://webfactor.ch">Website by Webfactor</a></p>
 
             <ul class="col-sm-8" id="partners">
                 <li><a><img src="<?php echo $tdu; ?>/img/artistiqua.png"  alt="logo" />artistiqua</a></li>
