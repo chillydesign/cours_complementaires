@@ -1,13 +1,12 @@
 <?php get_header(); ?>
 
-
+<div class="container">
 <?php
 	$school = get_field('school');
 	$description = get_field('description');
 	$course_id = get_the_ID();
 	$cat = get_the_terms( $course_id, 'categorie-cours' );
 	$cat_name = $cat[0]->name;
-	$cat_class = "cours_" . $cat[0]->slug;
 
 	$school_letter = chilly_school_letters();
 	$category_letters = chilly_category_letters();
@@ -18,26 +17,19 @@
 
 	$extra = get_field('extra');
 ?>
+	<!-- <h1><?php the_title(); ?></h1> -->
+	<?php if($school){echo '<h3>' . $school[0]->post_excerpt . '</h3>';} ?>
+
+	<div class="row">
 
 
-<div class="featherlight">
-	<div class="featherlight-content <?php echo $cat_class; ?>">
-		<div id="cours_container">
-			<div class="container">
-
-				<h1><?php the_title(); ?></h1>
-				<?php if($school){echo '<h3>' . $school[0]->post_excerpt . '</h3>';} ?>
-
-				<div class="row">
-
-
-					<div class="col-sm-6 ">
+		<div class="col-sm-6 ">
 
 
 
-						<?php echo $description; ?>
+			<?php echo $description; ?>
 
-						<?php if( get_field('alternate_url') ) :
+			<?php if( get_field('alternate_url') ) :
 				echo '<p><a target="_blank" href="' . get_field('alternate_url') . '" class="inscription_button">Inscription</a></p>';
 				elseif( $school[0]->post_title == 'CPMDT' ) :
 					echo '<p><a href="' . get_home_url() . '/inscription?course_id=' . $course_id . '" class="inscription_button">Inscription</a></p>';
@@ -48,71 +40,71 @@
 				endif;
 			?>
 
-					</div>
+		</div>
 
-					<div class="col-sm-4 col-sm-push-1">
-
-
-						<p><strong>Catégorie:</strong> <?php echo $cat_name ?></p>
-						<p><strong>Code:</strong> <?php echo $course_code ?></p>
+		<div class="col-sm-4 col-sm-push-1">
 
 
-						<?php echo $extra; ?>
+			<p><strong>Catégorie:</strong> <?php echo $cat_name ?></p>
+			<p><strong>Code:</strong> <?php echo $course_code ?></p>
 
 
-						<?php if ($ecolage_name) {  ?>
-						<p><strong>Ecolage:</strong> <?php echo $ecolage_name; ?></p>
-						<?php } ?>
-
-						<div class="school_image school_image_ <%= cours.school[0].post_name %>"></div>
+			<?php echo $extra; ?>
 
 
-					</div>
+			<?php if ($ecolage_name) {  ?>
+			<p><strong>Ecolage:</strong> <?php echo $ecolage_name; ?></p>
+				<?php } ?>
+
+			<div class="school_image school_image_ <%= cours.school[0].post_name %>"></div>
 
 
-				</div>
+		</div>
+
+
+	</div>
 
 
 
 
-				<table class="table">
-					<thead>
-						<tr>
-							<th>Professeur(s)</th>
-							<th>Horaire</th>
-							<th>Lieu</th>
-						</tr>
-					</thead>
-					<tbody>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Professeur(s)</th>
+				<th>Horaire</th>
+				<th>Lieu</th>
+			</tr>
+		</thead>
+		<tbody>
 
-						<?php
+		<?php
 		if( have_rows('times') ):
 
 		 	// loop through the rows of data
 		    while ( have_rows('times') ) : the_row(); ?>
 
-						<tr>
-							<td>
-								<?php $teachers = get_sub_field('teachers'); ?>
-								<?php if($teachers): ?>
-								<?php $count =1; ?>
-								<?php foreach ($teachers as $teacher) {
+			<tr>
+				<td>
+			        <?php $teachers = get_sub_field('teachers'); ?>
+			        <?php if($teachers): ?>
+			        	<?php $count =1; ?>
+			        	<?php foreach ($teachers as $teacher) {
 			        		if($count > 1) {echo ', '; }
 			        		echo $teacher->post_title;
 			        		$count++;
 			        	} ?>
-								<?php endif; ?>
-							</td>
+			        <?php endif; ?>
+		        </td>
 
-							<td>
-								<?php echo get_sub_field('time'); ?>
-							</td>
+			<td>
+				<?php echo get_sub_field('time'); ?>
+			</td>
 
-							<td>
-								<?php  $lieu = get_sub_field('location'); ?>
-								<?php if($lieu): ?>
-								<?php $lieu_title = $lieu->post_title; ?>
-								<?php if($lieu_title != ''){
+			<td>
+		        <?php  $lieu = get_sub_field('location'); ?>
+		        <?php if($lieu): ?>
+		        	<?php $lieu_title = $lieu->post_title; ?>
+			        <?php if($lieu_title != ''){
 			        	 $lieu_id = $lieu->ID;
 			        	 $zone = get_field('zone', $lieu_id);
 			        	 $zone_title = $zone->post_title;
@@ -120,25 +112,19 @@
 			        	 if($zone_title){echo $zone_title . ' - ';}
 			        	 echo $lieu_title;
 			     	} ?>
-								<?php endif; ?>
+		        <?php endif; ?>
 
-							</td>
-
-
-							<?php endwhile;endif; ?>
-					</tbody>
-				</table>
+			</td>
 
 
-			</div>
+		    <?php endwhile;
+		endif; ?>
+	</tbody>
+</table>
 
-		</div>
-		<!--END OF cours_container -->
-	</div>
-	<!--END OF featherlight-content -->
+
+
 </div>
-<!--END OF featherlight -->
-
 <br><br>
 
 <?php get_footer(); ?>
