@@ -164,22 +164,28 @@ function html5blank_conditional_scripts()
 
 function wf_version()
 {
-    return '3.6.2';
+    return '3.6.3';
 }
 
 // Load HTML5 Blank styles
 function html5blank_styles()
 {
-    wp_register_style('featherlight', get_template_directory_uri() . '/featherlight.min.css', array(), '1.4', 'all');
+    // remove gutenberg css
+	wp_dequeue_style('wp-block-library');
+
+    $tdu =  get_template_directory_uri();
+
+
+    wp_register_style('featherlight',  $tdu . '/featherlight.min.css', array(), '1.4', 'all');
     wp_enqueue_style('featherlight'); // Enqueue it!
 
-    //  wp_register_style('chosen', get_template_directory_uri() . '/chosen.min.css', array(), '1.4', 'all');
+    //  wp_register_style('chosen',  $tdu . '/chosen.min.css', array(), '1.4', 'all');
     // wp_enqueue_style('chosen'); // Enqueue it!
 
-    // wp_register_style('reset', get_template_directory_uri() . '/reset.css', array(), '1.1', 'all');
+    // wp_register_style('reset',  $tdu . '/reset.css', array(), '1.1', 'all');
     // wp_enqueue_style('reset'); // Enqueue it!
 
-    wp_register_style('style', get_template_directory_uri() . '/style.css', array(), wf_version(), 'all');
+    wp_register_style('style',  $tdu . '/style.css', array(), wf_version(), 'all');
     wp_enqueue_style('style'); // Enqueue it!
 }
 
