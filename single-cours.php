@@ -20,8 +20,11 @@
 ?>
 
 
-<div class="featherlight">
+<div class="featherlight" style="display:block">
 	<div class="featherlight-content <?php echo $cat_class; ?>">
+
+	<a href="https://courscomplementaires.ch/recherche/"  class="featherlight-close-icon featherlight-close">✕</a>
+
 		<div id="cours_container">
 			<div class="container">
 

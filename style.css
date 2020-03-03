@@ -8,7 +8,81 @@
 	License URI: http://opensource.org/licenses/mit-license.php
 	Green: 179b29
 */
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strike, strong, sub, sup, tt, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figure, figcaption, footer, header, hgroup, menu, nav, output, section, summary, time, mark, audio, video {
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -18,7 +92,17 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
@@ -26,15 +110,20 @@ body {
   line-height: 1;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after, q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
   content: '';
   content: none;
 }
@@ -94,18 +183,25 @@ body {
   }
 }
 
-h1, h2, h3, h4, h5, header {
+h1,
+h2,
+h3,
+h4,
+h5,
+header {
   font-family: 'Montserrat';
 }
 
-h1, li h1 {
+h1,
+li h1 {
   font-size: 3em;
   margin: 0 0 25px;
   font-weight: bold;
   line-height: 125%;
 }
 
-h2, li h2 {
+h2,
+li h2 {
   font-size: 3.6em;
   margin: 0px 0 30px;
   font-weight: bold;
@@ -113,27 +209,31 @@ h2, li h2 {
   text-transform: uppercase;
 }
 
-h3, li h3 {
+h3,
+li h3 {
   font-size: 2.6em;
   margin: 0px 0 30px;
   letter-spacing: 0.7px;
   font-weight: bold;
 }
 
-h4, li h4 {
+h4,
+li h4 {
   font-size: 2em;
   margin: 0px 0 15px;
   font-weight: bold;
   color: #995300;
 }
 
-h5, li h5 {
+h5,
+li h5 {
   font-size: 1.7em;
   margin: 0px 0 10px;
   font-weight: bold;
 }
 
-h6, li h6 {
+h6,
+li h6 {
   font-size: 1.5em;
   font-weight: bold;
   padding: 0 0 5px;
@@ -152,23 +252,29 @@ li {
 }
 
 @media (min-width:768px) {
-  h1, li h1 {
+
+  h1,
+  li h1 {
     font-size: 4.3em
   }
 
-  h2, li h2 {
+  h2,
+  li h2 {
     font-size: 3.8em
   }
 
-  h3, li h3 {
+  h3,
+  li h3 {
     font-size: 2.6em
   }
 
-  h4, li h4 {
+  h4,
+  li h4 {
     font-size: 2em
   }
 
-  h5, li h5 {
+  h5,
+  li h5 {
     font-size: 1.7em
   }
 }
@@ -182,15 +288,18 @@ a {
   text-decoration: none
 }
 
-a:link, a:link h3 {
+a:link,
+a:link h3 {
   color: #179b29
 }
 
-a:visited, a:visited h3 {
+a:visited,
+a:visited h3 {
   color: #179b29
 }
 
-a:hover, a:hover h3 {
+a:hover,
+a:hover h3 {
   color: #9b2917
 }
 
@@ -218,7 +327,8 @@ dd {
   line-height: 150%
 }
 
-article ul, article ol {
+article ul,
+article ol {
   padding: 0 0 30px 20px;
 }
 
@@ -232,11 +342,13 @@ article ol li {
   padding: 0 0 5px;
 }
 
-strong, b {
+strong,
+b {
   font-weight: bold;
 }
 
-em, i {
+em,
+i {
   font-style: italic
 }
 
@@ -262,7 +374,8 @@ table.table {
   color: white;
 }
 
-.table th, td {
+.table th,
+td {
   padding: 9px;
   font-size: 1.4em
 }
@@ -337,7 +450,8 @@ option {
   padding: 5px
 }
 
-input, input:focus {
+input,
+input:focus {
   border: 0;
   border-bottom: solid 1px #555;
   border-radius: 0;
@@ -570,7 +684,8 @@ a#page_title {
   right: 0;
 }
 
-#svg_19, #svg_20 {
+#svg_19,
+#svg_20 {
   background: url('img/17.svg') no-repeat center center;
   background-size: 90%;
   position: absolute;
@@ -922,7 +1037,8 @@ header form#search_form_small {
 #search_form_small  input:-moz-placeholder { color: white }
 #search_form_small  input::-moz-placeholder {  color: white }
 #search_form_small  input:-ms-input-placeholder {  color: white }*/
-#search_form_small input:active, #search_form_small input:focus {
+#search_form_small input:active,
+#search_form_small input:focus {
   /*background: white;*/
   color: #333;
   width: 90%;
@@ -1505,7 +1621,8 @@ section {
   padding: 30px
 }
 
-span.featherlight-close-icon.featherlight-close {
+span.featherlight-close-icon.featherlight-close,
+a.featherlight-close-icon.featherlight-close {
   font-size: 4em;
   padding: 30px;
   width: auto;
@@ -1518,7 +1635,8 @@ span.featherlight-close-icon.featherlight-close {
   transition: all 0.5s;
 }
 
-span.featherlight-close-icon.featherlight-close:hover {
+span.featherlight-close-icon.featherlight-close:hover,
+a.featherlight-close-icon.featherlight-close:hover {
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
@@ -1699,7 +1817,8 @@ footer p {
   text-align: center
 }
 
-footer a:link, footer a:visited {
+footer a:link,
+footer a:visited {
   color: white;
 }
 
@@ -1778,16 +1897,21 @@ div#cours_container {
 
 */
 /*BOOTSTRAP STUFF*/
-.clearfix:before, .clearfix:after, .row:before, .row:after {
+.clearfix:before,
+.clearfix:after,
+.row:before,
+.row:after {
   display: table;
   content: " "
 }
 
-.clearfix:after, .row:after {
+.clearfix:after,
+.row:after {
   clear: both
 }
 
-.container, .container-fluid {
+.container,
+.container-fluid {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -1817,14 +1941,72 @@ div#cours_container {
   margin-left: -15px;
 }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px
 }
 
-.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+.col-xs-1,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12 {
   float: left
 }
 
@@ -2033,7 +2215,19 @@ div#cours_container {
 }
 
 @media (min-width:768px) {
-  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+
+  .col-sm-1,
+  .col-sm-2,
+  .col-sm-3,
+  .col-sm-4,
+  .col-sm-5,
+  .col-sm-6,
+  .col-sm-7,
+  .col-sm-8,
+  .col-sm-9,
+  .col-sm-10,
+  .col-sm-11,
+  .col-sm-12 {
     float: left
   }
 
@@ -2243,7 +2437,19 @@ div#cours_container {
 }
 
 @media (min-width:992px) {
-  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+
+  .col-md-1,
+  .col-md-2,
+  .col-md-3,
+  .col-md-4,
+  .col-md-5,
+  .col-md-6,
+  .col-md-7,
+  .col-md-8,
+  .col-md-9,
+  .col-md-10,
+  .col-md-11,
+  .col-md-12 {
     float: left
   }
 
@@ -2453,7 +2659,19 @@ div#cours_container {
 }
 
 @media (min-width:1200px) {
-  .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+
+  .col-lg-1,
+  .col-lg-2,
+  .col-lg-3,
+  .col-lg-4,
+  .col-lg-5,
+  .col-lg-6,
+  .col-lg-7,
+  .col-lg-8,
+  .col-lg-9,
+  .col-lg-10,
+  .col-lg-11,
+  .col-lg-12 {
     float: left
   }
 
@@ -2668,7 +2886,8 @@ div#cours_container {
 }
 
 /* flip the pane when hovered */
-.flip-container:hover .flipper, .flip-container.hover .flipper {
+.flip-container:hover .flipper,
+.flip-container.hover .flipper {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
@@ -2676,7 +2895,9 @@ div#cours_container {
   transform: rotateY(180deg);
 }
 
-.flip-container, .front, .back {
+.flip-container,
+.front,
+.back {
   width: 100%;
   height: 280px;
 }
@@ -2697,7 +2918,8 @@ div#cours_container {
 }
 
 /* hide back of pane during swap */
-.front, .back {
+.front,
+.back {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
@@ -2751,7 +2973,8 @@ div#cours_container {
   width: calc(100% - 26px);
 }
 
-.icon, .next_to_icon {
+.icon,
+.next_to_icon {
   font-size: 1.3em;
   display: inline-block;
   margin-bottom: 8px;
