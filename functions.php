@@ -164,7 +164,7 @@ function html5blank_conditional_scripts()
 
 function wf_version()
 {
-    return '3.6.3';
+    return '3.6.4';
 }
 
 // Load HTML5 Blank styles

@@ -1633,6 +1633,7 @@ a.featherlight-close-icon.featherlight-close {
   -ms-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
+  text-decoration: none;
 }
 
 span.featherlight-close-icon.featherlight-close:hover,
