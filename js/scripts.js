@@ -1,6 +1,6 @@
-(function($, root, undefined) {
+(function ($, root, undefined) {
 
-	$(function() {
+	$(function () {
 
 		'use strict';
 
@@ -11,11 +11,11 @@
 		// });
 
 
-		$('.search_box').on('click', function(e) {
+		$('.search_box').on('click', function (e) {
 			e.stopPropagation();
 		});
 
-		$('.search_button').on('click', function(e) {
+		$('.search_button').on('click', function (e) {
 			e.preventDefault();
 			e.stopPropagation();
 			var $this = $(this);
@@ -31,12 +31,12 @@
 
 		})
 
-		$('html,body').on('click', function(e) {
+		$('html,body').on('click', function (e) {
 			$('.search_box').removeClass('visible');
 		});
 
 
-		$('.copy_input').on('blur', function() {
+		$('.copy_input').on('blur', function () {
 			var $this = $(this);
 			var $data_copy = $this.data('copy');
 			if ($data_copy != '') {
@@ -52,7 +52,7 @@
 
 
 		// takes the single courses class, and adds it to the featherlight container
-		$.featherlight.defaults.afterOpen = function(event) {
+		$.featherlight.defaults.afterOpen = function (event) {
 			$("body").css("overflow-y", "hidden");
 			var $target = $(event.target)
 			var $d = $target.parent().parent();
@@ -73,7 +73,7 @@
 
 				$.ajax({
 					url: $url
-				}).done(function(data) {
+				}).done(function (data) {
 
 					if (typeof data == 'object') {
 						var single_compiled = _.template($cours_template);
@@ -104,7 +104,7 @@
 
 		}
 
-		$.featherlight.defaults.afterClose = function(event) {
+		$.featherlight.defaults.afterClose = function (event) {
 			$("body").css("overflow-y", "auto");
 		}
 
@@ -122,14 +122,14 @@
 		var $navigation_menu = $('#navigation_menu');
 		var $menu_button = $('#menu_button');
 
-		$menu_button.on('click', function() {
+		$menu_button.on('click', function () {
 
 			$navigation_menu.toggleClass('menu_visible');
 
 		});
 
 		// if press escape key, hide menu
-		$(document).on('keydown', function(e) {
+		$(document).on('keydown', function (e) {
 
 			if (e.keyCode == 27) {
 				$navigation_menu.removeClass('menu_visible');
@@ -142,9 +142,9 @@
 
 
 
-		$('.alert').on('click', function() {
+		$('.alert').on('click', function () {
 			var $this = $(this);
-			$this.animate({ 'opacity': 0 }, 500, function() {
+			$this.animate({ 'opacity': 0 }, 500, function () {
 				$this.slideUp();
 			});
 		})
@@ -297,7 +297,7 @@
 
 			$.ajax({
 				url: search_url
-			}).done(function(data) {
+			}).done(function (data) {
 
 
 
@@ -309,7 +309,7 @@
 
 
 
-				$reset_course_form.on('click', function() {
+				$reset_course_form.on('click', function () {
 					$('.search_check').attr('checked', false);
 					$('#cours_search').val('');
 					$reset_course_form.hide();
@@ -318,25 +318,25 @@
 
 
 
-				$search_checks.on('change', function() {
+				$search_checks.on('change', function () {
 					displayCourses(courses, $courses_container, compiled)
 				});
 
 
-				$categorie_select.on('change', function() {
+				$categorie_select.on('change', function () {
 					displayCourses(courses, $courses_container, compiled)
 				});
 
-				$location_select.on('change', function() {
+				$location_select.on('change', function () {
 					displayCourses(courses, $courses_container, compiled)
 				});
 
 
-				$school_select.on('change', function() {
+				$school_select.on('change', function () {
 					displayCourses(courses, $courses_container, compiled)
 				});
 
-				$cours_search.on('keyup', function() {
+				$cours_search.on('keyup', function () {
 					displayCourses(courses, $courses_container, compiled)
 				});
 
@@ -376,7 +376,7 @@
 			var $cat = new Array();
 			var $prof = new Array();
 
-			$search_checks.each(function() {
+			$search_checks.each(function () {
 				var $this = $(this);
 				var $check_type = $this.data('field');
 				if ($this.is(":checked")) {
@@ -394,10 +394,10 @@
 				};
 
 			});
-			$school = _.filter($school, function(num) { return num > 0; });
-			$location = _.filter($location, function(num) { return num > 0; });
-			$cat = _.filter($cat, function(num) { return num > 0; });
-			$prof = _.filter($prof, function(num) { return num > 0; });
+			$school = _.filter($school, function (num) { return num > 0; });
+			$location = _.filter($location, function (num) { return num > 0; });
+			$cat = _.filter($cat, function (num) { return num > 0; });
+			$prof = _.filter($prof, function (num) { return num > 0; });
 
 
 
@@ -424,7 +424,7 @@
 			courses_container.html(compiled({ courses: s_courses }));
 			$('.single_cours_inner').matchHeight();
 
-			$('#back_to_top').on('click', function(e) {
+			$('#back_to_top').on('click', function (e) {
 				e.preventDefault();
 				$("html, body").animate({ scrollTop: 0 }, 500);
 			})
@@ -442,14 +442,14 @@
 
 
 			if (search && search != '') {
-				var search_array = _.reject(removeDiacritics(search.toLowerCase()).split(' '), function(t) { return t == '' });
+				var search_array = _.reject(removeDiacritics(search.toLowerCase()).split(' '), function (t) { return t == '' });
 
 
-				var courses = _.filter(courses, function(c) {
+				var courses = _.filter(courses, function (c) {
 
 					return (
 
-						_.every(search_array, function(t) { return c.searchfield.indexOf(t) > -1 })
+						_.every(search_array, function (t) { return c.searchfield.indexOf(t) > -1 })
 
 						//     _.every(  search_array  ,  function(t) { return c.post_title.toLowerCase().indexOf(t) > 0  }  )
 						// ||  _.every(  search_array  ,  function(t) { return c.description.toLowerCase().indexOf(t) > 0   }  )
@@ -467,22 +467,25 @@
 
 
 			if (category && category != '') {
-				var courses = _.reject(courses, function(c) {
+				var courses = _.reject(courses, function (c) {
 
-					if (typeof c.categories[0].term_id !== 'undefined') {
-						// normal user serach uses this for course id
-						var tid = c.categories[0].term_id;
-					} else {
-						// admin course search uses this for course id
-						var tid = c.categories[0];
+					if (c.categories[0] !== 'undefined') {
+						if (typeof c.categories[0].term_id !== 'undefined') {
+							// normal user serach uses this for course id
+							var tid = c.categories[0].term_id;
+						} else {
+							// admin course search uses this for course id
+							var tid = c.categories[0];
+						}
+						// return !_.contains(category, c.categories[0].term_id);
+						return !_.contains(category, tid);
 					}
-					// return !_.contains(category, c.categories[0].term_id);
-					return !_.contains(category, tid);
+
 				});
 			}
 
 			if (location && location != '') {
-				var courses = _.reject(courses, function(c) {
+				var courses = _.reject(courses, function (c) {
 					// return c.zone !=  location
 					//return !_.contains(  c.zone  , location)
 					return (_.intersection(location, c.zone).length == 0);
@@ -490,13 +493,13 @@
 			}
 
 			if (school && school.length > 0) {
-				var courses = _.reject(courses, function(c) {
+				var courses = _.reject(courses, function (c) {
 					//	return !_.contains(   c.school , school )
 					return (_.intersection(school, c.school).length == 0);
 				});
 			}
 			if (prof && prof.length > 0) {
-				var courses = _.reject(courses, function(c) {
+				var courses = _.reject(courses, function (c) {
 					return (_.intersection(prof, c.professuers).length == 0);
 				});
 			}
@@ -509,7 +512,7 @@
 			for (var i = 0; i < courses.length; i++) {
 				var course = courses[i];
 
-				course['proper_url'] = function() {
+				course['proper_url'] = function () {
 					return '/agenda/?course=' + this.id;
 				}
 
@@ -672,7 +675,7 @@ function addPointToMap(map, location, bounds, infowindow, markers) {
 		icon: customMarker
 	});
 
-	marker.addListener('click', function() {
+	marker.addListener('click', function () {
 		infowindow.setContent(this.title + '<br><a href="' + search_url + '#l=' + this.id + '">Voir les cours</a>');
 		infowindow.open(map, this);
 		// $('#location_box').show();
@@ -693,7 +696,7 @@ function addPointToMap(map, location, bounds, infowindow, markers) {
 
 
 function make_first_letter_green() {
-	$('.section_full_width h2').each(function() {
+	$('.section_full_width h2').each(function () {
 		var $this = $(this);
 		var $html = $this.html();
 		//var $split = $html.split(' ');
@@ -705,7 +708,7 @@ function make_first_letter_green() {
 
 
 function markCheckbox($type, $id) {
-	$('.search_check').each(function() {
+	$('.search_check').each(function () {
 		var $this = $(this);
 		var $check_type = $this.data('field');
 		var $val = $this.val();
