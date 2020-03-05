@@ -479,7 +479,10 @@
 						}
 						// return !_.contains(category, c.categories[0].term_id);
 						return !_.contains(category, tid);
+					} else {
+						return true;
 					}
+
 
 				});
 			}
