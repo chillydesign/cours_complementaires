@@ -723,7 +723,8 @@ a#page_title {
   }
 }
 
-.home #svg_20 {
+.home #svg_20,
+.accueil #svg_20 {
   -o-animation: slideInLeft 4s forwards;
   -ms-animation: slideInLeft 4s forwards;
   -moz-animation: slideInLeft 4s forwards;
@@ -731,7 +732,8 @@ a#page_title {
   animation: slideInLeft 4s forwards;
 }
 
-.home #svg_21 {
+.home #svg_21,
+.accueil #svg_21 {
   -o-animation: slideInRight 4s forwards;
   -ms-animation: slideInRight 4s forwards;
   -moz-animation: slideInRight 4s forwards;
