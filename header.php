@@ -57,8 +57,9 @@
 
 
             <div id="svgs">
-                <div id="svg_19"></div>
+            
                 <div id="svg_20"></div>
+                <div id="svg_21"></div>
             </div>
         </header>
 

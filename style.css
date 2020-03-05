@@ -151,7 +151,7 @@ table {
 
 /*TYPOGRAPHY*/
 body {
-  font-family: 'Lato', 'Gotham', sans-serif;
+  font-family: 'Lato', 'Montserrat', 'Gotham', sans-serif;
   font-size: 62.5%;
   font-weight: 300;
   color: #222;
@@ -684,9 +684,9 @@ a#page_title {
   right: 0;
 }
 
-#svg_19,
-#svg_20 {
-  background: url('img/17.svg') no-repeat center center;
+#svg_20,
+#svg_21 {
+  background: url('img/20.svg') no-repeat center center;
   background-size: 90%;
   position: absolute;
   width: 100%;
@@ -697,11 +697,7 @@ a#page_title {
   opacity: 0.1;
 }
 
-#svg_19 {
-  background-image: url('img/19.svg');
-  left: -15%;
-  background-size: 50%;
-}
+
 
 #svg_20 {
   background-image: url('img/20.svg');
@@ -709,19 +705,25 @@ a#page_title {
   background-size: 50%;
 }
 
+#svg_21 {
+  background-image: url('img/21.svg');
+  left: 25%;
+  background-size: 50%;
+}
+
 @media (min-width:768px) {
-  #svg_19 {
+  #svg_20 {
     left: -17%;
     background-size: 51%;
   }
 
-  #svg_20 {
+  #svg_21 {
     left: 17%;
     background-size: 51%;
   }
 }
 
-.home #svg_19 {
+.home #svg_20 {
   -o-animation: slideInLeft 4s forwards;
   -ms-animation: slideInLeft 4s forwards;
   -moz-animation: slideInLeft 4s forwards;
@@ -729,7 +731,7 @@ a#page_title {
   animation: slideInLeft 4s forwards;
 }
 
-.home #svg_20 {
+.home #svg_21 {
   -o-animation: slideInRight 4s forwards;
   -ms-animation: slideInRight 4s forwards;
   -moz-animation: slideInRight 4s forwards;
