@@ -469,7 +469,7 @@
 			if (category && category != '') {
 				var courses = _.reject(courses, function (c) {
 
-					if (c.categories[0] !== 'undefined') {
+					if (c.categories !== 'undefined') {
 						if (typeof c.categories[0].term_id !== 'undefined') {
 							// normal user serach uses this for course id
 							var tid = c.categories[0].term_id;
