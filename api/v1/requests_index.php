@@ -1,9 +1,9 @@
 <?php
 
 
-$file = 'request';
 
-$requests_array = get_posts(array('post_type'  => 'request', 'posts_per_page' => -1, 'post_status' => 'publish' ) );
+
+$requests_array = get_posts(array('post_type'  => 'request', 'posts_per_page' => -1, 'post_status' => 'publish'));
 $request_ids =  array_map('api_get_id_from_object', $requests_array);
 
 $request_courses = api_get_request_courses($request_ids);
@@ -18,7 +18,7 @@ foreach (api_all_request_fields() as $field) {
 
 
 //$data =  'nom,cours,date,' . implode(',' , api_all_request_fields_headers()     ) .   "\n";
-$data =  'nom;cours;date;' . implode(';' , api_all_request_fields_headers()     ) .   "\n";
+$data =  'nom;cours;date;' . implode(';', api_all_request_fields_headers()) .   "\n";
 
 foreach ($requests_array as $request) {
 
@@ -68,7 +68,7 @@ foreach ($requests_array as $request) {
 		$metafield_string = (sizeof($metafield) == 1)  ?  $metafield[0] : '';
 		//$metafield_string = str_replace(',', ' ', $metafield_string);
 		$metafield_string = str_replace(';', ' ', $metafield_string);
-		array_push($meta_strings , $metafield_string);
+		array_push($meta_strings, $metafield_string);
 	}
 
 
@@ -94,13 +94,17 @@ foreach ($requests_array as $request) {
 }
 
 
+$encoded_csv = mb_convert_encoding($data, 'UTF-16LE', 'UTF-8');
 
-
-$filename = $file.'_'.date('Y-m-d_H-i',time());
+$file = 'request';
+$filename = $file . '_' . date('Y-m-d_H-i', time());
 header('Content-type: application/vnd.ms-excel');
 header('Content-disposition: csv' . date('Y-m-d') . '.csv');
-header( 'Content-disposition: filename='.$filename.'.csv');
-print $data;
+header('Content-disposition: filename=' . $filename . '.csv');
+header('Content-Length: ' . strlen($encoded_csv));
+$encoded_csv =   chr(255) . chr(254) . $encoded_csv;
+print $encoded_csv;
+
 
 //print_r ($data);
 
