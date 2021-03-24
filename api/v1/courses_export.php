@@ -264,10 +264,13 @@ foreach ($posts_array as $post) {
 $data =  $headers .  implode("\n", $courses_array);
 
 
+$encoded_csv = mb_convert_encoding($data, 'UTF-16LE', 'UTF-8');
 
 $file = 'courses';
 $filename = $file . '_' . date('Y-m-d_H-i', time());
 header('Content-type: application/vnd.ms-excel');
 header('Content-disposition: csv' . date('Y-m-d') . '.csv');
 header('Content-disposition: filename=' . $filename . '.csv');
-print $data;
+header('Content-Length: ' . strlen($encoded_csv));
+$encoded_csv =   chr(255) . chr(254) . $encoded_csv;
+print $encoded_csv;
