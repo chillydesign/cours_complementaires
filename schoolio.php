@@ -531,10 +531,7 @@ function get_email_from_request_form() {
 
             Dès la constitution des classes, le professeur vous contactera et vous confirmera l’horaire et le lieu du cours.<br><br>
 
-            Avec nos remerciements pour la confiance que vous accordez au CPMDT, nous vous prions de recevoir nos meilleures salutations.<br><br>
-
-            L\'administration du CPMDT
-            ';
+            Avec nos remerciements pour la confiance que vous accordez au Conservatoire Populaire, nous vous prions de recevoir nos meilleures salutations.<br><br>';
             $body_student .= $emailfooter;
 
             wp_mail($recipients_student, $subj_student, $body_student, $headers);
