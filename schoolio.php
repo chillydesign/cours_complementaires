@@ -858,12 +858,14 @@ function request_form_shortcode($atts, $content = null) {
     <div style="padding:0 40px" class="col-sm-6">
     <h3 class=" field_group student_group">Elève</h3>';
 
+
+    // <option value="Mademoiselle">Mademoiselle</option> 
+
     $rq_frm .=
         '<div class=" field_group student_group">
     <div class="field field_for_select">
     <select id="title_student" name="title_student">
     <option value="Madame">Madame</option>
-    <option value="Mademoiselle">Mademoiselle</option>
     <option value="Monsieur">Monsieur</option>
     </select>
 
@@ -918,12 +920,11 @@ function request_form_shortcode($atts, $content = null) {
     $rq_frm .=  ' <div style="padding:0 40px" class="col-sm-6  field_group respondent_group  right_border_col">
     <h3>Répondant</h3>';
 
-
+    // <option value="Mademoiselle">Mademoiselle</option>
     $rq_frm .=
         '<div class="field field_for_select">
     <select id="title_respondent" name="title_respondent">
     <option value="Madame">Madame</option>
-    <option value="Mademoiselle">Mademoiselle</option>
     <option value="Monsieur">Monsieur</option>
     </select>
     </div>';
