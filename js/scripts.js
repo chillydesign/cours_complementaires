@@ -471,11 +471,9 @@
 
 
 					if (c.categories.length > 0) {
-
+						let cat_ids = c.categories;
 						if (c.categories[0].term_id !== undefined) {
-							const cat_ids = c.categories.map(ct => ct.term_id);
-						} else {
-							const cat_ids = c.categories;
+							cat_ids = c.categories.map(ct => ct.term_id);
 						}
 
 						// allow search for multiple categories
