@@ -8,8 +8,8 @@
 		<a  data-url="<%= cours.api_url  %>" class="course_link"  data-featherlight="#cours_container"   href="#">
 		<h5><%= cours.post_title %></h5>
 		<p><%= cours.description %></p>
-    <% if ( cours.categories.length > 0 ) {%>
-		<p style="font-weight: bold"> <%= cours.categories[0].name %></p>
+    <% if ( cours.cat_names ) {%>
+		<p style="font-weight: bold"><%= cours.cat_names %></p>
     <% } %>
     </a>
 		</div>
