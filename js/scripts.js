@@ -469,28 +469,33 @@
 			if (category && category != '') {
 				var courses = _.reject(courses, function (c) {
 
+					const cat_ids = c.categories.map(ct => ct.term_id);
 
-					if (c.ID == 2099) {
-						console.log(category);
-						console.log(c.categories);
-						const cat_ids = c.categories.map(ct => ct.term_id);
-						console.log(cat_ids);
-						console.log(_.intersection(category, cat_ids))
-					}
+					// allow search for multiple categories
+					return (_.intersection(category, cat_ids).length == 0)
 
-					if (c.categories.length > 0) {
-						if (typeof c.categories[0].term_id !== 'undefined') {
-							// normal user search uses this for course id
-							var tid = c.categories[0].term_id;
-						} else {
-							// admin course search uses this for course id
-							var tid = c.categories[0];
-						}
-						// return !_.contains(category, c.categories[0].term_id);
-						return !_.contains(category, tid);
-					} else {
-						return true;
-					}
+					// if (c.ID == 2099) {
+					// 	console.log(category);
+					// 	console.log(c.categories);
+					// 	console.log(cat_ids);
+					// 	console.log(_.intersection(category, cat_ids))
+					// }
+
+
+
+					// if (c.categories.length > 0) {
+					// 	if (typeof c.categories[0].term_id !== 'undefined') {
+					// 		// normal user search uses this for course id
+					// 		var tid = c.categories[0].term_id;
+					// 	} else {
+					// 		// admin course search uses this for course id
+					// 		var tid = c.categories[0];
+					// 	}
+					// 	// return !_.contains(category, c.categories[0].term_id);
+					// 	return !_.contains(category, tid);
+					// } else {
+					// 	return true;
+					// }
 
 
 				});
