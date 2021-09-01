@@ -474,13 +474,6 @@
 					// allow search for multiple categories
 					return (_.intersection(category, cat_ids).length == 0)
 
-					// if (c.ID == 2099) {
-					// 	console.log(category);
-					// 	console.log(c.categories);
-					// 	console.log(cat_ids);
-					// 	console.log(_.intersection(category, cat_ids))
-					// }
-
 
 
 					// if (c.categories.length > 0) {

@@ -35,17 +35,8 @@ foreach ($posts_array as $post) {
         }
     );
     $post->categories = array_values($cats);
+    $post->cat_names = api_categories_to_cat_names($post->categories);
 
-    if (sizeof($post->categories) > 0) {
-        $post->cat_names = implode(
-            ', ',
-            array_map(function ($c) {
-                return $c->name;
-            }, $post->categories)
-        );
-    } else {
-        $post->cat_names = false;
-    }
 
 
 

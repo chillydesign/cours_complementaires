@@ -413,6 +413,21 @@ if (!function_exists('api_remove_unnecessary_things')) {
 }
 
 
+
+function api_categories_to_cat_names($categories) {
+	if (sizeof($categories) > 0) {
+		return implode(
+			', ',
+			array_map(function ($c) {
+				return $c->name;
+			}, $categories)
+		);
+	}
+	return  false;
+}
+
+
+
 if (!function_exists('api_get_detailed_course')) {
 	function api_get_detailed_course($course_id) {
 
@@ -434,10 +449,12 @@ if (!function_exists('api_get_detailed_course')) {
 				$cat_name = $cat[0]->name;
 				$course->categories = array($cat[0]->term_id);
 				$course->cat = $cat_name;
+				$course->cat_names = api_categories_to_cat_names($cat);
 			} else {
 				$cat_name = '';
 				$course->categories = array();
 				$course->cat = $cat_name;
+				$course->cat_names = false;
 			}
 
 
