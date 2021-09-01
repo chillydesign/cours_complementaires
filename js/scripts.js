@@ -469,11 +469,19 @@
 			if (category && category != '') {
 				var courses = _.reject(courses, function (c) {
 
-					const cat_ids = c.categories.map(ct => ct.term_id);
 
-					// allow search for multiple categories
-					return (_.intersection(category, cat_ids).length == 0)
+					if (c.categories.length > 0) {
 
+						if (c.categories[0].term_id !== undefined) {
+							const cat_ids = c.categories.map(ct => ct.term_id);
+						} else {
+							const cat_ids = c.categories;
+						}
+
+						// allow search for multiple categories
+						return (_.intersection(category, cat_ids).length == 0)
+					}
+					return true; // reject it has no categories
 
 
 					// if (c.categories.length > 0) {
