@@ -475,6 +475,7 @@
 						console.log(c.categories);
 						const cat_ids = c.categories.map(ct => ct.term_id);
 						console.log(cat_ids);
+						console.log(_intersection(category, cat_ids))
 					}
 
 					if (c.categories.length > 0) {
