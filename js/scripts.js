@@ -546,7 +546,6 @@
 			// sort courses by category then name if requested
 			if (typeof sort_by_cat_first !== 'undefined') {
 				courses = _.sortBy(courses, 'cat');
-				console.log(courses);
 
 			}
 

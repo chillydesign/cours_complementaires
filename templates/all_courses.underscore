@@ -37,7 +37,7 @@
 		<div class="col-sm-4 col-sm-push-1 col-print-6">
 
 
-			<p><strong>Catégorie:</strong> <%= cours.cat %></p>
+			<p><strong>Catégorie:</strong> <%= cours.cat_names %></p>
 			<p><strong>Code:</strong> <%= cours.code %></p>
 
 
