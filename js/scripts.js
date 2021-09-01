@@ -470,7 +470,7 @@
 				var courses = _.reject(courses, function (c) {
 
 
-					if (c.id == 2099) {
+					if (c.ID == 2099) {
 						console.log(category);
 						console.log(c.categories);
 						const cat_ids = c.categories.map(ct => ct.term_id);
