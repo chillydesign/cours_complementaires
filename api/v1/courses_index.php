@@ -38,7 +38,7 @@ foreach ($posts_array as $post) {
 
     if (sizeof($post->categories) > 0) {
         $post->cat_names = implode(
-            ',',
+            ', ',
             array_map(function ($c) {
                 return $c->name;
             }, $post->categories)

@@ -248,7 +248,7 @@
 				var hashes = window.location.hash.split('&');
 				for (var h = 0; h < hashes.length; h++) {
 					var hash = hashes[h];
-					console.log(hash);
+					// console.log(hash);
 
 					if (hash.indexOf('c=') !== -1) {
 						var c = hash.split('=')[1];
@@ -469,9 +469,17 @@
 			if (category && category != '') {
 				var courses = _.reject(courses, function (c) {
 
+
+					if (c.id == 2099) {
+						console.log(category);
+						console.log(c.categories);
+						const cat_ids = c.categories.map(ct => ct.term_id);
+						console.log(cat_ids);
+					}
+
 					if (c.categories.length > 0) {
 						if (typeof c.categories[0].term_id !== 'undefined') {
-							// normal user serach uses this for course id
+							// normal user search uses this for course id
 							var tid = c.categories[0].term_id;
 						} else {
 							// admin course search uses this for course id
