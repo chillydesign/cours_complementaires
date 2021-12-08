@@ -504,7 +504,7 @@ function get_email_from_request_form() {
             $course_name = $course->post_title;
 
 
-            $headers = 'From: Cours Complémentaires <noreply@courscomplementaires.ch>' . "\r\n";
+            $headers = 'From: Cours Complémentaires <inscription@conservatoirepopulaire.ch>' . "\r\n";
             $emailheader = file_get_contents(dirname(__FILE__) . '/email/email_header.php');
             $emailfooter = file_get_contents(dirname(__FILE__) . '/email/email_footer.php');
             add_filter('wp_mail_content_type', create_function('', 'return "text/html"; '));
@@ -543,7 +543,7 @@ function get_email_from_request_form() {
 
             // EMAIL TO ADMIN
 
-            $recipient_cpmdt = 'inscription@cpmdt.ch';
+            $recipient_cpmdt = 'inscription@conservatoirepopulaire.ch';
 
             $subj_cpmdt = 'Confirmation d\'inscription aux Cours Complémentaires';
             $body_cpmdt = $emailheader;
