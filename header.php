@@ -58,9 +58,10 @@
             <?php endif; ?>
 
 
+            <?php $numbers = get_header_year_numbers(); ?>
             <div id="big_numbers">
-                <div id="big_first">22</div>
-                <div id="big_last">23</div>
+                <div id="big_first"><?php echo $numbers[0]; ?></div>
+                <div id="big_last"><?php echo $numbers[1]; ?></div>
             </div>
         </header>
 

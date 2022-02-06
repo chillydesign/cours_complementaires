@@ -537,4 +537,21 @@ if (function_exists('acf_add_options_page')) {
     acf_add_options_page();
 }
 
+
+function get_header_year_numbers() {
+
+    $y = get_the_field('annee', 'option');
+    if ($y) {
+        $s = explode('-', $y);
+        $f = $s[0];
+        $l = $s[1];
+        $ff =  substr($f, 2, 2);
+        $ll =  substr($l, 2, 2);
+        return [$ff, $ll];
+    }
+    return [22, 23];
+}
+
+
+
     ?>
