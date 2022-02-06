@@ -677,16 +677,25 @@ a#page_title {
   position: absolute;
   top: 0;
   width: 100%;
-  font-size: 20em;
+  height: 100%;
+  left: 0;
+  font-size: 50em;
   user-select: none;
-  opacity: 0.5;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 #big_first {
-  color: black;
+  color: rgba(0, 0, 0, 0.1);
+  transform: translateX(40px);
+  animation: slideInLeft 4s forwards;
 }
 #big_last {
-  color: white;
+  color: rgba(255, 255, 255, 0.1);
+  transform: translateX(-40px);
+  animation: slideInLeft 4s forwards;
 }
 
 #svgs {
