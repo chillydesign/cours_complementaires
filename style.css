@@ -693,10 +693,14 @@ a#page_title {
 #big_first {
   color: rgba(0, 0, 0, 0.9);
   opacity: 0.1;
+  position: relative;
+  right: 50px;
 }
 #big_last {
   color: rgba(255, 255, 255, 0.9);
   opacity: 0.1;
+  position: relative;
+  right: -50px;
 }
 
 @media (min-width: 768px) {
