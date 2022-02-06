@@ -695,7 +695,7 @@ a#page_title {
 #big_last {
   color: rgba(255, 255, 255, 0.9);
   transform: translateX(-40px);
-  animation: slideInLeft 4s forwards;
+  animation: slideInRight 4s forwards;
 }
 
 #svgs {
