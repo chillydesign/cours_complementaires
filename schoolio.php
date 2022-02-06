@@ -527,7 +527,7 @@ function get_email_from_request_form() {
             <h1 style="line-height:120%; font-size:20px;">Conservatoire populaire de musique, danse et théâtre</h1>
             Madame, Monsieur,<br><br>
 
-            Nous accusons réception de votre inscription pour le cours ' . $course_name . ' pour l’année scolaire 2021-2022.<br><br>
+            Nous accusons réception de votre inscription pour le cours ' . $course_name . ' pour l’année scolaire 2022-2023.<br><br>
 
             Dès la constitution des classes, le professeur vous contactera et vous confirmera l’horaire et le lieu du cours.<br><br>
 
