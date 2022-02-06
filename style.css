@@ -694,16 +694,22 @@ a#page_title {
   color: rgba(0, 0, 0, 0.9);
   opacity: 0.1;
   position: relative;
-  left: 50px;
+  left: 25px;
 }
 #big_last {
   color: rgba(255, 255, 255, 0.9);
   opacity: 0.1;
   position: relative;
-  left: -50px;
+  left: -25px;
 }
 
 @media (min-width: 768px) {
+  #big_first {
+    left: 50px;
+  }
+  #big_last {
+    left: -50px;
+  }
   #big_numbers {
     font-size: 30em;
   }
