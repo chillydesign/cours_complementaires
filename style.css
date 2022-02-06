@@ -700,6 +700,10 @@ a#page_title {
 }
 
 @media (min-width: 768px) {
+  #big_numbers {
+    font-size: 30em;
+  }
+
   .home #big_numbers,
   .accueil #big_numbers {
     font-size: 50em;
