@@ -688,12 +688,12 @@ a#page_title {
 }
 
 #big_first {
-  color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.9);
   transform: translateX(40px);
   animation: slideInLeft 4s forwards;
 }
 #big_last {
-  color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
   transform: translateX(-40px);
   animation: slideInLeft 4s forwards;
 }
