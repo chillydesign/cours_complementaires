@@ -540,7 +540,7 @@ if (function_exists('acf_add_options_page')) {
 
 function get_header_year_numbers() {
 
-    $y = get_the_field('annee', 'option');
+    $y = get_field('annee', 'option');
     if ($y) {
         $s = explode('-', $y);
         $f = $s[0];
