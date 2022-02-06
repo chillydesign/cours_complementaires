@@ -533,4 +533,8 @@ if (!function_exists('chilly_category_letters')) {
 }
 
 
+if (function_exists('acf_add_options_page')) {
+    acf_add_options_page();
+}
+
     ?>
