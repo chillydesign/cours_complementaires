@@ -700,10 +700,8 @@ a#page_title {
 }
 
 @media (min-width: 768px) {
-  .home #big_first,
-  .accueil #big_first,
-  .home #big_last,
-  .accueil #big_last {
+  .home #big_numbers,
+  .accueil #big_numbers {
     font-size: 50em;
   }
 }
