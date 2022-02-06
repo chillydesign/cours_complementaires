@@ -504,6 +504,8 @@ function get_email_from_request_form() {
             $course_name = $course->post_title;
 
 
+            $year_name = get_field('annee', 'option');
+
             $headers = 'From: Cours Complémentaires <inscription@conservatoirepopulaire.ch>' . "\r\n";
             $emailheader = file_get_contents(dirname(__FILE__) . '/email/email_header.php');
             $emailfooter = file_get_contents(dirname(__FILE__) . '/email/email_footer.php');
@@ -527,7 +529,7 @@ function get_email_from_request_form() {
             <h1 style="line-height:120%; font-size:20px;">Conservatoire populaire de musique, danse et théâtre</h1>
             Madame, Monsieur,<br><br>
 
-            Nous accusons réception de votre inscription pour le cours ' . $course_name . ' pour l’année scolaire 2022-2023.<br><br>
+            Nous accusons réception de votre inscription pour le cours ' . $course_name . ' pour l’année scolaire' . $year_name . '.<br><br>
 
             Dès la constitution des classes, le professeur vous contactera et vous confirmera l’horaire et le lieu du cours.<br><br>
 
