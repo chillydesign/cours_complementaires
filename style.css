@@ -687,17 +687,25 @@ a#page_title {
   align-items: center;
   font-weight: bold;
   overflow: hidden;
+  font-size: 20em;
 }
 
 #big_first {
   color: rgba(0, 0, 0, 0.9);
   opacity: 0.1;
-  font-size: 30em;
 }
 #big_last {
   color: rgba(255, 255, 255, 0.9);
   opacity: 0.1;
-  font-size: 30em;
+}
+
+@media (min-width: 768px) {
+  .home #big_first,
+  .accueil #big_first,
+  .home #big_last,
+  .accueil #big_last {
+    font-size: 50em;
+  }
 }
 
 .home #big_first,
@@ -707,7 +715,6 @@ a#page_title {
   -moz-animation: slideInLeft 4s forwards;
   -webkit-animation: slideInLeft 4s forwards;
   animation: slideInLeft 4s forwards;
-  font-size: 50em;
 }
 .home #big_last,
 .accueil #big_last {
@@ -716,7 +723,6 @@ a#page_title {
   -moz-animation: slideInRight 4s forwards;
   -webkit-animation: slideInRight 4s forwards;
   animation: slideInRight 4s forwards;
-  font-size: 50em;
 }
 
 #svgs {
