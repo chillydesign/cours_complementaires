@@ -685,6 +685,7 @@ a#page_title {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
+  font-weight: bold;
 }
 
 #big_first {
