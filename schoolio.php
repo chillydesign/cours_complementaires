@@ -597,6 +597,13 @@ function get_email_from_request_form() {
                 </tr>';
             }
 
+            if (isset($_POST['ondine_genevoise'])) {
+                $body_cpmdt .= '<tr>
+                <td style="padding:5px" >Êtes-vous élève à l’Ondine genevoise ? </td>
+                <td style="padding:5px" >' . $_POST['ondine_genevoise'] . '</td>
+                </tr>';
+            }
+
             $body_cpmdt .= '
             <tr>
             <td style="padding:5px" >Date de naissance</td>
@@ -823,7 +830,7 @@ function request_form_shortcode($atts, $content = null) {
 
 
     $rq_frm .=  '<div id="student_of_cpmdt_check" class="field group_visible ">
-    <p>Êtes-vous déjà inscrit au CPMDT comme élève instrumentiste?</p>
+    <p>Êtes-vous déjà inscrit au CPMDT comme élève instrumentiste ?</p>
     <label class="inline_label"><input type="radio" class="radio_input" value="oui" name="student_of_cpmdt" />Oui</label>
     <label class="inline_label"><input type="radio" class="radio_input" value="non" name="student_of_cpmdt" />Non</label>
     </div>';
@@ -844,6 +851,15 @@ function request_form_shortcode($atts, $content = null) {
     <input type="text" name="instrument" id="instrument" />
     </div></div>
     </div>';
+
+    $rq_frm .=  '<div class="field field_group group_not_for_student_of_cpmdt">
+    <p>Êtes-vous élève à l\'Ondine genevoise ?</p>
+    <label class="inline_label"><input type="radio" class="radio_input" value="oui" name="ondine_genevoise" />Oui</label>
+    <label class="inline_label"><input type="radio" class="radio_input" value="non" name="ondine_genevoise" />Non</label>
+    </div>';
+
+
+
 
     $rq_frm .=  '<div id="proper_respondent_check" class="field field_group group_not_for_student_of_cpmdt">
     <p>Êtes-vous votre propre répondant?</p>
@@ -1057,6 +1073,7 @@ function all_request_fields() {
         'school_name' => 'Nom de l\'école',
         'student_of_cpmdt'  =>  'Elève  CPMDT',
         'student_of_other'  =>  'Elève autre école',
+        'ondine_genevoise'  =>  'Elève à l\'Ondine genevoise',
         'instrument'  =>  'Instrument',
         'title_student'   =>  'Titre de l\'élève',
         'nom_student'   =>  'Nom de l\'élève',
