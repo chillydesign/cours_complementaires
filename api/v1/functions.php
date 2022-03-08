@@ -20,14 +20,14 @@ if (!function_exists('api_course_price_list')) {
 if (!function_exists('api_all_request_fields')) {
 	function api_all_request_fields() {
 
-		return array('teacher_id', 'title_student', 'nom_student', 'prenom_student', 'school_name', 'instrument', 'date_naissance_student', 'email_student', 'phone1_student', 'address_student_1', 'locality_student', 'title_respondent', 'nom_respondent', 'prenom_respondent', 'date_naissance_respondent', 'email_respondent', 'phone1_respondent', 'address_respondent_1', 'locality_respondent', 'lieu_imposition', 'facture', 'course_id', 'authorize');
+		return array('teacher_id', 'title_student', 'nom_student', 'prenom_student', 'school_name', 'ondine_genevoise',   'instrument', 'date_naissance_student', 'email_student', 'phone1_student', 'address_student_1', 'locality_student', 'title_respondent', 'nom_respondent', 'prenom_respondent', 'date_naissance_respondent', 'email_respondent', 'phone1_respondent', 'address_respondent_1', 'locality_respondent', 'lieu_imposition', 'facture', 'course_id', 'authorize');
 	}
 }
 
 if (!function_exists('api_all_request_fields_headers')) {
 	function api_all_request_fields_headers() {
 
-		return array('Professeur lieu et horaires', 'Titre élève', 'Nom élève', 'Prénom élève', 'École de l\'élève', 'Instrument', 'Date de naissance élève', 'Email élève', 'Téléphone élève', 'Adresse élève', 'Ville élève', 'Titre répondant', 'Nom répondant', 'Prénom répondant', 'Date de naissance répondant', 'Email répondant', 'Téléphone répondant', 'Adresse répondant', 'Ville répondant', 'Lieu imposition', 'Facture', 'Nom du cours', 'Photos');
+		return array('Professeur lieu et horaires', 'Titre élève', 'Nom élève', 'Prénom élève', 'École de l\'élève',  'Elève à l\'Ondine genevoise',   'Instrument', 'Date de naissance élève', 'Email élève', 'Téléphone élève', 'Adresse élève', 'Ville élève', 'Titre répondant', 'Nom répondant', 'Prénom répondant', 'Date de naissance répondant', 'Email répondant', 'Téléphone répondant', 'Adresse répondant', 'Ville répondant', 'Lieu imposition', 'Facture', 'Nom du cours', 'Photos');
 	}
 }
 
