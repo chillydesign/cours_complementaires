@@ -603,6 +603,12 @@ function get_email_from_request_form() {
                 <td style="padding:5px" >' . $_POST['ondine_genevoise'] . '</td>
                 </tr>';
             }
+            if (isset($_POST['ondine_discipline'])) {
+                $body_cpmdt .= '<tr>
+                <td style="padding:5px" >Si oui, dans quelle discipline ?  </td>
+                <td style="padding:5px" >' . $_POST['ondine_discipline'] . '</td>
+                </tr>';
+            }
 
             $body_cpmdt .= '
             <tr>
@@ -852,10 +858,16 @@ function request_form_shortcode($atts, $content = null) {
     </div></div>
     </div>';
 
-    $rq_frm .=  '<div class="field field_group group_not_for_student_of_cpmdt">
+    $rq_frm .=  '<div  id="ondine_genevoise_check"  class="field field_group group_not_for_student_of_cpmdt">
     <p>Êtes-vous élève à l\'Ondine genevoise ?</p>
     <label class="inline_label"><input type="radio" class="radio_input" value="oui" name="ondine_genevoise" />Oui</label>
     <label class="inline_label"><input type="radio" class="radio_input" value="non" name="ondine_genevoise" />Non</label>
+    </div>';
+
+    $rq_frm .=  '<div class="field field_group group_for_ondine">
+    <p>Si oui, dans quelle discipline?</p>
+    <label class="inline_label"><input type="radio" class="radio_input" value="Percussion" name="ondine_discipline" />Percussion</label>
+    <label class="inline_label"><input type="radio" class="radio_input" value="Instrument à vent" name="ondine_discipline" />Instrument à vent</label>
     </div>';
 
 
@@ -1074,6 +1086,7 @@ function all_request_fields() {
         'student_of_cpmdt'  =>  'Elève  CPMDT',
         'student_of_other'  =>  'Elève autre école',
         'ondine_genevoise'  =>  'Elève à l\'Ondine genevoise',
+        'ondine_discipline'  =>  'Si oui, dans quelle discipline?',
         'instrument'  =>  'Instrument',
         'title_student'   =>  'Titre de l\'élève',
         'nom_student'   =>  'Nom de l\'élève',
