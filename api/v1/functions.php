@@ -532,7 +532,9 @@ if (!function_exists('api_get_detailed_course')) {
 						}
 					);
 
-					$zone = array_values($zone);
+					if ($zone) {
+						$zone = array_values($zone);
+					}
 
 					$loc->zone = $zone;
 
