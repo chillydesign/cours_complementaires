@@ -533,10 +533,12 @@ if (!function_exists('api_get_detailed_course')) {
 					);
 
 					if ($zone) {
+						$loc->zone = $zone;
 						$zone = array_values($zone);
+					} else {
+						$zone = false;
 					}
 
-					$loc->zone = $zone;
 
 					$teachs = $time['teachers'];
 					if ($teachs) {
