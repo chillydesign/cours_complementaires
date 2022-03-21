@@ -523,17 +523,23 @@ function get_email_from_request_form() {
             );
 
 
-            $subj_student = 'Confirmation d\'inscription aux Cours Complémentaires';
+            $subj_student = "Demande d'inscription aux Cours Complémentaires";
             $body_student = $emailheader;
             $body_student .= '
             <h1 style="line-height:120%; font-size:20px;">Conservatoire populaire de musique, danse et théâtre</h1>
             Madame, Monsieur,<br><br>
 
-            Nous accusons réception de votre inscription pour le cours ' . $course_name . ' pour l’année scolaire' . $year_name . '.<br><br>
+            Nous accusons réception de votre inscription pour le cours ' . $course_name . ' pour l\'année ' . $year_name . '. <br><br>
+            
+            Votre inscription au cours choisi vous sera confirmée sous réserve des places disponibles.<br><br>
 
-            Dès la constitution des classes, le professeur vous contactera et vous confirmera l’horaire et le lieu du cours.<br><br>
+            Pour toute question, nous répondons  vos appels téléphoniques du lundi au vendredi de 9h à 12h et de 14h à 17h, au 022 329 67 22.<br><br>
 
-            Avec nos remerciements pour la confiance que vous accordez au Conservatoire Populaire, nous vous prions de recevoir nos meilleures salutations.<br><br>';
+            Vous pouvez également nous écrire <a href="mailto:administration@conservatoirepopulaire.ch">administration@conservatoirepopulaire.ch</a><br><br>
+
+            Nous vous remercions pour la confiance que vous nous accordez, et vous prions de recevoir nos meilleures salutations. <br><br>
+            L\'administration';
+
             $body_student .= $emailfooter;
 
             wp_mail($recipients_student, $subj_student, $body_student, $headers);
