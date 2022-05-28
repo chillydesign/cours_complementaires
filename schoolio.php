@@ -718,7 +718,7 @@ function get_email_from_request_form() {
 
             //wp_redirect( $referer . '?success' );
             $redirect = get_home_url() . '/inscription-reussie/';
-            // wp_redirect($redirect);
+            wp_redirect($redirect);
         }
 
 
