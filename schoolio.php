@@ -509,7 +509,7 @@ function get_email_from_request_form() {
             $headers = 'From: Cours Complémentaires <inscription@conservatoirepopulaire.ch>' . "\r\n";
             $emailheader = file_get_contents(dirname(__FILE__) . '/email/email_header.php');
             $emailfooter = file_get_contents(dirname(__FILE__) . '/email/email_footer.php');
-            add_filter('wp_mail_content_type', create_function('', 'return "text/html"; '));
+            add_filter('wp_mail_content_type',  'chilly_set_html_mail_content_type');
 
 
 
@@ -552,6 +552,7 @@ function get_email_from_request_form() {
             // EMAIL TO ADMIN
 
             $recipient_cpmdt = 'inscription@conservatoirepopulaire.ch';
+            $recipient_cpmdt = 'harvey.charles@gmail.com';
 
             $subj_cpmdt = 'Confirmation d\'inscription aux Cours Complémentaires';
             $body_cpmdt = $emailheader;
@@ -728,6 +729,10 @@ function get_email_from_request_form() {
     endif;
 }
 
+
+function chilly_set_html_mail_content_type() {
+    return 'text/html';
+}
 
 function add_zone_from_locations() {
     $locations = get_posts(array('post_type'  => 'lieu', 'posts_per_page' => -1));
