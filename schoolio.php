@@ -715,15 +715,7 @@ function get_email_from_request_form() {
 
 
 
-            echo $body_cpmdt;
-            echo '-=-=-=-=';
-            echo $subj_cpmdt;
-            echo '-=-=-=-=';
-            echo $subj_student;
-            echo '-=-=-=-=';
-            echo $body_student;
-            echo '-=-=-=-=';
-            echo $year_name;
+
             //wp_redirect( $referer . '?success' );
             $redirect = get_home_url() . '/inscription-reussie/';
             // wp_redirect($redirect);
