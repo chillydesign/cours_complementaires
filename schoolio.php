@@ -552,7 +552,7 @@ function get_email_from_request_form() {
             // EMAIL TO ADMIN
 
             $recipient_cpmdt = 'inscription@conservatoirepopulaire.ch';
-            $recipient_cpmdt = 'harvey.charles@gmail.com';
+            // $recipient_cpmdt = 'harvey.charles@gmail.com';
 
             $subj_cpmdt = 'Confirmation d\'inscription aux Cours Complémentaires';
             $body_cpmdt = $emailheader;
