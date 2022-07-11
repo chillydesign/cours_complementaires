@@ -489,7 +489,7 @@ if (!function_exists('api_get_detailed_course')) {
 			if ($alternate_url) :
 				$course->inscription = '<p><a target="_blank" href="' . $alternate_url  . '" class="inscription_button">Inscription</a></p>';
 			elseif ($school[0]->post_title == 'CPMDT') :
-				$course->inscription = '<p><a href="inscription?course_id=' . $course->ID . '" class="inscription_button">Inscription</a></p>';
+				$course->inscription = '<p><a href="' . site_url() . '/inscription?course_id=' . $course->ID . '" class="inscription_button">Inscription</a></p>';
 			elseif ($school[0]->post_title == 'IJD') :
 				$course->inscription = '<p><a target="_blank" href="http://www.dalcroze.ch/inscription/" class="inscription_button">Inscription sur le site de l’IJD</a></p>';
 			elseif ($school[0]->post_title == 'CMG') :
