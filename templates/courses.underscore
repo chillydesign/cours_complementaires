@@ -5,7 +5,7 @@
 
 	<li class="single_cours col-sm-4 col-md-4   " >
 		<div class="single_cours_inner cours_<%= cours.slug %>">
-		<a  data-url="<%= cours.api_url  %>" class="course_link"  data-featherlight="#cours_container"   href="#">
+		<a  data-url="<%= cours.api_url  %>" class="course_link"  data-featherlight="#cours_container"   href="<%= cours.url %>">
 		<h5><%= cours.post_title %></h5>
 		<p><%= cours.description %></p>
     <% if ( cours.cat_names ) { %>

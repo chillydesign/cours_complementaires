@@ -214,7 +214,7 @@ foreach ($posts_array as $post) {
 
 
 
-
+    $post->url = get_permalink($post->ID);
 
 
 

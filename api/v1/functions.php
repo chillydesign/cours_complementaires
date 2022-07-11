@@ -565,6 +565,7 @@ if (!function_exists('api_get_detailed_course')) {
 			$course->searchfield = $searchable_fields;
 
 
+			$course->url = get_permalink($course_id);
 
 
 

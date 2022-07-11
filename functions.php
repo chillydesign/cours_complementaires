@@ -156,7 +156,7 @@ function html5blank_conditional_scripts() {
 }
 
 function wf_version() {
-    return '3.6.8';
+    return '3.6.9';
 }
 
 // Load HTML5 Blank styles
@@ -528,7 +528,7 @@ if (!function_exists('chilly_school_letters')) {
 
 if (!function_exists('chilly_category_letters')) {
     function chilly_category_letters() {
-        return array(3 => 'R', 4 => 'S', 5 => 'T', 6 => 'U', 7 => 'V', 8 => 'W', 9 => 'X', 10 => 'Y', 11 => 'Z');
+        return array(3 => 'R', 4 => 'S', 5 => 'T', 6 => 'U', 7 => 'V', 8 => 'W', 9 => 'X', 10 => 'Y', 11 => 'Z', 23 => 'IN');
     }
 }
 
