@@ -295,7 +295,7 @@ function create_schoolio_post_types() {
                 'not_found' => __('Aucune inscription trouvée', 'html5blank'),
                 'not_found_in_trash' => __('Aucune inscription trouvée dans la crobeille', 'html5blank')
             ),
-            'public' => false,
+            'public' => true,
             'show_ui' => true,
             'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
             'has_archive' => false,
