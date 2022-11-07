@@ -296,8 +296,9 @@ function create_schoolio_post_types() {
                 'not_found_in_trash' => __('Aucune inscription trouvée dans la crobeille', 'html5blank')
             ),
             'public' => false,
+            'show_ui' => true,
             'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-            'has_archive' => true,
+            'has_archive' => false,
             'supports' => array(
                 // 'editor',
                 'title'
