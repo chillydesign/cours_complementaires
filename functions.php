@@ -553,5 +553,13 @@ function get_header_year_numbers() {
 }
 
 
+add_filter('wp_robots', 'change_robots_custom_post_type');
 
+function change_robots_custom_post_type($robots) {
+    $post_type = (get_post_type(get_the_ID()));
+    if ($post_type == 'request') {
+        $robots['noindex'] = true;
+    }
+    return $robots;
+}
     ?>
