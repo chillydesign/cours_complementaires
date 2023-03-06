@@ -16,18 +16,22 @@
 							<h3>CMG</h3>
 							<h4>Conservatoire de musique de Genève</h4>
 							<p>
-							<div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
-							<div class="next_to_icon">+41 22 319 60 60</div>
-							<div class="clear"></div>
-							<div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
-							<div class="next_to_icon"> cmg@cmg.ch</div>
-							<div class="clear"></div>
-							<div class="icon"><i class="fa fa-mouse-pointer" aria-hidden="true"></i></div>
-							<div class="next_to_icon"> <a href="http://www.cmg.ch/">www.cmg.ch/</a></div>
-							<div class="clear"></div>
-							<div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-							<div class="next_to_icon">Bd du Théâtre 5 <br> 1204 Genève</div>
-							<div class="clear"></div>
+							<div class="icon_group">
+								<div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+								<div class="next_to_icon">+41 22 319 60 60</div>
+							</div>
+							<div class="icon_group">
+								<div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+								<div class="next_to_icon"> cmg@cmg.ch</div>
+							</div>
+							<div class="icon_group">
+								<div class="icon"><i class="fa fa-mouse-pointer" aria-hidden="true"></i></div>
+								<div class="next_to_icon"> <a href="http://www.cmg.ch/">www.cmg.ch/</a></div>
+							</div>
+							<div class="icon_group">
+								<div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+								<div class="next_to_icon">Bd du Théâtre 5 <br> 1204 Genève</div>
+							</div>
 							</p>
 						</div>
 					</div>
@@ -50,15 +54,18 @@
 							<h3>CPMDT</h3>
 							<h4>Conservatoire populaire de musique, danse et théâtre</h4>
 							<p>
-							<div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
-							<div class="next_to_icon">+41 22 329 67 22</div>
-							<div class="clear"></div>
-							<div class="icon"><i class="fa fa-mouse-pointer" aria-hidden="true"></i></div>
-							<div class="next_to_icon"> <a href="http://www.conservatoirepopulaire.ch/"><span style="display:inline-block">www.conservatoire</span><span style="display:inline-block">populaire.ch</span></a></div>
-							<div class="clear"></div>
-							<div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-							<div class="next_to_icon">Rue François-D'Ivernois 7<br>Case postale 230<br>1211 Genève 12</div>
-							<div class="clear"></div>
+							<div class="icon_group">
+								<div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+								<div class="next_to_icon">+41 22 329 67 22</div>
+							</div>
+							<div class="icon_group">
+								<div class="icon"><i class="fa fa-mouse-pointer" aria-hidden="true"></i></div>
+								<div class="next_to_icon"> <a href="http://www.conservatoirepopulaire.ch/"><span style="display:inline-block">www.conservatoire</span><span style="display:inline-block">populaire.ch</span></a></div>
+							</div>
+							<div class="icon_group">
+								<div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+								<div class="next_to_icon">Rue François-D'Ivernois 7<br>Case postale 230<br>1211 Genève 12</div>
+							</div>
 							</p>
 						</div>
 					</div>
@@ -82,18 +89,22 @@
 							<h3>IJD</h3>
 							<h4>Institut Jaques-dalcroze</h4>
 							<p>
-							<div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
-							<div class="next_to_icon">+41 22 718 37 60</div>
-							<div class="clear"></div>
-							<div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
-							<div class="next_to_icon">info@dalcroze.ch</div>
-							<div class="clear"></div>
-							<div class="icon"><i class="fa fa-mouse-pointer" aria-hidden="true"></i></div>
-							<div class="next_to_icon"><a href="http://www.dalcroze.ch/">www.dalcroze.ch/</a></div>
-							<div class="clear"></div>
-							<div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-							<div class="next_to_icon">Rue de la Terrassière 44<br>1207 Genève</div>
-							<div class="clear"></div>
+							<div class="icon_group">
+								<div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+								<div class="next_to_icon">+41 22 718 37 60</div>
+							</div>
+							<div class="icon_group">
+								<div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+								<div class="next_to_icon">info@dalcroze.ch</div>
+							</div>
+							<div class="icon_group">
+								<div class="icon"><i class="fa fa-mouse-pointer" aria-hidden="true"></i></div>
+								<div class="next_to_icon"><a href="http://www.dalcroze.ch/">www.dalcroze.ch/</a></div>
+							</div>
+							<div class="icon_group">
+								<div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+								<div class="next_to_icon">Rue de la Terrassière 44<br>1207 Genève</div>
+							</div>
 							</p>
 						</div>
 					</div>
