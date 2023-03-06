@@ -3046,6 +3046,11 @@ div#cours_container {
   line-height: 130%;
 }
 
+.icon_group {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
 img {
   width: 100%;
   height: auto;
