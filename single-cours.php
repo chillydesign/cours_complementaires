@@ -2,34 +2,36 @@
 
 
 <?php
-	$school = get_field('school');
-	$description = get_field('description');
-	$course_id = get_the_ID();
-	$cat = get_the_terms( $course_id, 'categorie-cours' );
-	$cat_name = $cat[0]->name;
-	$cat_class = "cours_" . $cat[0]->slug;
+$school = get_field('school');
+$description = get_field('description');
+$course_id = get_the_ID();
+$cat = get_the_terms($course_id, 'categorie-cours');
+$cat_name = $cat[0]->name;
+$cat_class = "cours_" . $cat[0]->slug;
 
-	$school_letter = chilly_school_letters();
-	$category_letters = chilly_category_letters();
-	$course_code = $school_letter[$school[0]->ID ] . $category_letters[ $cat[0]->term_id  ]  .   $course_id;
+$school_letter = chilly_school_letters();
+$category_letters = chilly_category_letters();
+$course_code = $school_letter[$school[0]->ID] . $category_letters[$cat[0]->term_id]  .   $course_id;
 
-	$ecolage = get_the_terms( $course_id, 'ecolage-cours' );
-	$ecolage_name = (  sizeof($ecolage) > 0 ) ? $ecolage[0]->name : null;
+$ecolage = get_the_terms($course_id, 'ecolage-cours');
+$ecolage_name = (sizeof($ecolage) > 0) ? $ecolage[0]->name : null;
 
-	$extra = get_field('extra');
+$extra = get_field('extra');
 ?>
 
 
 <div class="featherlight" style="display:block">
 	<div class="featherlight-content <?php echo $cat_class; ?>">
 
-	<a href="https://courscomplementaires.ch/recherche/"  class="featherlight-close-icon featherlight-close">✕</a>
+		<a href="https://courscomplementaires.ch/recherche/" class="featherlight-close-icon featherlight-close">✕</a>
 
 		<div id="cours_container">
 			<div class="container">
 
 				<h1><?php the_title(); ?></h1>
-				<?php if($school){echo '<h3>' . $school[0]->post_excerpt . '</h3>';} ?>
+				<?php if ($school) {
+					echo '<h3>' . $school[0]->post_excerpt . '</h3>';
+				} ?>
 
 				<div class="row">
 
@@ -40,16 +42,16 @@
 
 						<?php echo $description; ?>
 
-						<?php if( get_field('alternate_url') ) :
-				echo '<p><a target="_blank" href="' . get_field('alternate_url') . '" class="inscription_button">Inscription</a></p>';
-				elseif( $school[0]->post_title == 'CPMDT' ) :
-					echo '<p><a href="' . get_home_url() . '/inscription?course_id=' . $course_id . '" class="inscription_button">Inscription</a></p>';
-				elseif( $school[0]->post_title == 'IJD' ) :
-					echo '<p><a target="_blank" href="http://www.dalcroze.ch/inscription/" class="inscription_button">Inscription sur le site de l’IJD</a></p>';
-				elseif( $school[0]->post_title == 'CMG' ) :
-					echo '<p><a  target="_blank"href="http://www.cmusge.ch/sites/default/files/cmusge/public/formulaire_inscription_musique_2017_2018.pdf" class="inscription_button">Inscription sur le site du CMG</a></p>';
-				endif;
-			?>
+						<?php if (get_field('alternate_url')) :
+							echo '<p><a target="_blank" href="' . get_field('alternate_url') . '" class="inscription_button">Inscription</a></p>';
+						elseif ($school[0]->post_title == 'CPMDT') :
+							echo '<p><a href="' . get_home_url() . '/inscription?course_id=' . $course_id . '" class="inscription_button">Inscription</a></p>';
+						elseif ($school[0]->post_title == 'IJD') :
+							echo '<p><a target="_blank" href="http://www.dalcroze.ch/inscription/" class="inscription_button">Inscription sur le site de l’IJD</a></p>';
+						elseif ($school[0]->post_title == 'CMG') :
+							echo '<p><a  target="_blank"href="http://www.cmusge.ch/sites/default/files/cmusge/public/formulaire_inscription_musique_2017_2018.pdf" class="inscription_button">Inscription sur le site du CMG</a></p>';
+						endif;
+						?>
 
 					</div>
 
@@ -64,7 +66,7 @@
 
 
 						<?php if ($ecolage_name) {  ?>
-						<p><strong>Ecolage:</strong> <?php echo $ecolage_name; ?></p>
+							<p><strong>Ecolage:</strong> <?php echo $ecolage_name; ?></p>
 						<?php } ?>
 
 						<div class="school_image school_image_ <%= cours.school[0].post_name %>"></div>
@@ -89,46 +91,52 @@
 					<tbody>
 
 						<?php
-		if( have_rows('times') ):
+						if (have_rows('times')) :
 
-		 	// loop through the rows of data
-		    while ( have_rows('times') ) : the_row(); ?>
+							// loop through the rows of data
+							while (have_rows('times')) : the_row(); ?>
 
-						<tr>
-							<td>
-								<?php $teachers = get_sub_field('teachers'); ?>
-								<?php if($teachers): ?>
-								<?php $count =1; ?>
-								<?php foreach ($teachers as $teacher) {
-			        		if($count > 1) {echo ', '; }
-			        		echo $teacher->post_title;
-			        		$count++;
-			        	} ?>
-								<?php endif; ?>
-							</td>
+								<tr>
+									<td>
+										<?php $teachers = get_sub_field('teachers'); ?>
+										<?php if ($teachers) : ?>
+											<?php $count = 1; ?>
+											<?php foreach ($teachers as $teacher) {
+												if ($count > 1) {
+													echo ', ';
+												}
+												echo $teacher->post_title;
+												$count++;
+											} ?>
+										<?php endif; ?>
+									</td>
 
-							<td>
-								<?php echo get_sub_field('time'); ?>
-							</td>
+									<td>
+										<?php echo get_sub_field('time'); ?>
+									</td>
 
-							<td>
-								<?php  $lieu = get_sub_field('location'); ?>
-								<?php if($lieu): ?>
-								<?php $lieu_title = $lieu->post_title; ?>
-								<?php if($lieu_title != ''){
-			        	 $lieu_id = $lieu->ID;
-			        	 $zone = get_field('zone', $lieu_id);
-			        	 $zone_title = $zone->post_title;
+									<td>
+										<?php $lieu = get_sub_field('location'); ?>
+										<?php if ($lieu) : ?>
+											<?php $lieu_title = $lieu->post_title; ?>
+											<?php if ($lieu_title != '') {
+												$lieu_id = $lieu->ID;
+												$zone = get_field('zone', $lieu_id);
 
-			        	 if($zone_title){echo $zone_title . ' - ';}
-			        	 echo $lieu_title;
-			     	} ?>
-								<?php endif; ?>
+												if ($zone) {
+													$zone_title = $zone->post_title;
 
-							</td>
+													echo $zone_title . ' - ';
+												}
+												echo $lieu_title;
+											} ?>
+										<?php endif; ?>
+
+									</td>
 
 
-							<?php endwhile;endif; ?>
+							<?php endwhile;
+						endif; ?>
 					</tbody>
 				</table>
 
