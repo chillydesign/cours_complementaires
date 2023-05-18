@@ -158,7 +158,15 @@
                 <tr>
                     <td bgcolor="#ffffff" align="center">
 
-                        <a href="https://courscomplementaires.ch" target="_blank"><img src="https://courscomplementaires.ch/wp-content/uploads/2021/03/courscomplementaires-header3.jpg" width="100%" height="" border="0" align="left" style="width: 100%; max-width:600px; margin-bottom: 15px;">
+                        <!-- 
+                    https://courscomplementaires.ch/wp-content/uploads/2023/05/cours_24_25.png
+                    https://courscomplementaires.ch/wp-content/uploads/2023/05/cours_25_26.png
+                    https://courscomplementaires.ch/wp-content/uploads/2023/05/cours_26_27.png
+                    https://courscomplementaires.ch/wp-content/uploads/2023/05/cours_27_28.png
+                    https://courscomplementaires.ch/wp-content/uploads/2023/05/cours_28_29.png 
+                -->
+
+                        <a href="https://courscomplementaires.ch" target="_blank"><img src="https://courscomplementaires.ch/wp-content/uploads/2023/05/cours_23_24.png" width="100%" height="" border="0" align="left" style="width: 100%; max-width:600px; margin-bottom: 15px;">
                         </a>
                     </td>
                 </tr>
