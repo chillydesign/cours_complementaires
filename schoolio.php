@@ -509,10 +509,13 @@ function get_email_from_request_form() {
 
             $headers = 'From: Cours Complémentaires <inscription@conservatoirepopulaire.ch>' . "\r\n";
             $emailheader = file_get_contents(dirname(__FILE__) . '/email/email_header.php');
+            $emailheader2 = file_get_contents(dirname(__FILE__) . '/email/email_header_2.php');
             $emailfooter = file_get_contents(dirname(__FILE__) . '/email/email_footer.php');
             add_filter('wp_mail_content_type',  'chilly_set_html_mail_content_type');
 
 
+            $himg = get_email_header_image();
+            $emailheaderimage =   '<img src="' . $himg . '" width="100%" height="" border="0" align="left" style="width: 100%; max-width:600px; margin-bottom: 15px;">';
 
             // EMAIL TO STUDENT
             $potential_recipients = array($_POST['email_respondent'], $_POST['email_student']);
@@ -525,7 +528,7 @@ function get_email_from_request_form() {
 
 
             $subj_student = "Demande d'inscription aux Cours Complémentaires";
-            $body_student = $emailheader;
+            $body_student = $emailheader . $emailheaderimage . $emailheader2;
             $body_student .= '
             <h1 style="line-height:120%; font-size:20px;">Conservatoire populaire de musique, danse et théâtre</h1>
             Madame, Monsieur,<br><br>
@@ -556,7 +559,7 @@ function get_email_from_request_form() {
             // $recipient_cpmdt = 'harvey.charles@gmail.com';
 
             $subj_cpmdt = 'Confirmation d\'inscription aux Cours Complémentaires';
-            $body_cpmdt = $emailheader;
+            $body_cpmdt =  $emailheader . $emailheaderimage . $emailheader2;
             $body_cpmdt .= '
             <h1 style="line-height:120%; font-size:20px;">Nouvelle inscription aux cours complémentaires</h1>
 

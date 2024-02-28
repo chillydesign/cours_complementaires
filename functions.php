@@ -551,6 +551,27 @@ function get_header_year_numbers() {
     }
     return [22, 23];
 }
+function get_email_header_image() {
+
+    $y = get_field('annee', 'option');
+    if ($y == '2022-2023') {
+        $img = 'https://courscomplementaires.ch/wp-content/uploads/2023/05/cours_22_23.png';
+    } else if ($y == '2023-2024') {
+        $img = 'https://courscomplementaires.ch/wp-content/uploads/2023/05/cours_23_24.png';
+    } else if ($y == '2024-2025') {
+        $img = 'https://courscomplementaires.ch/wp-content/uploads/2023/05/cours_24_25.png';
+    } else if ($y == '2025-2026') {
+        $img = 'https://courscomplementaires.ch/wp-content/uploads/2023/05/cours_25_26.png';
+    } else if ($y == '2026-2027') {
+        $img = 'https://courscomplementaires.ch/wp-content/uploads/2023/05/cours_26_27.png';
+    } else if ($y == '2027-2028') {
+        $img = 'https://courscomplementaires.ch/wp-content/uploads/2023/05/cours_27_28.png';
+    } else {
+        $img = 'https://courscomplementaires.ch/wp-content/uploads/2023/05/cours_28_29.png';
+    }
+    return $img;
+}
+
 
 
 add_filter('wp_robots', 'change_robots_custom_post_type');
