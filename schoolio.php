@@ -445,91 +445,103 @@ function get_email_from_request_form() {
     // IF DATA HAS BEEN POSTED
     if (isset($_POST['action'])  && $_POST['action'] == 'request_form') :
 
-        // TO DO CHECK IF ALL NECESSARY FIELDS HAVE BEEN FILLED IN
 
-        // $referer = $_SERVER['HTTP_REFERER'];
-        // $referer =  explode('?',   $referer)[0];
-
-
-        // print_r($_SERVER);
-        // print_r($referer);
-        //print_r($_POST);
-
-        $fullname = $_POST['prenom_student'] . ' ' . $_POST['nom_student'];
-
-
-
-        $post = array(
-            'post_title'     => $fullname,
-            'post_status'    => 'publish',
-            'post_type'      => 'request',
-            'post_content'   => ''
-            //      ,     'post_parent'   =>  $_POST['course_id']
-
-        );
-        $new_request = wp_insert_post($post);
-        $schoolname = 'CPMDT';
-        if ($_POST['student_of_cpmdt'] == 'non') {
-            if ($_POST['student_of_other'] == 'CMG') {
-                $schoolname = 'CMG';
-            } elseif ($_POST['student_of_other'] == 'IJF') {
-                $schoolname = 'IJD';
-            } else {
-                $schoolname = 'Pas encore inscrit';
-            }
+        // spam check
+        $address6 = $_POST['address6'];
+        if ($address6 == ''  || !$address6) {
+            $spam_check_ok = true;
+        } else {
+            $spam_check_ok = false;
         }
 
-        if ($new_request == 0) {
-            $inscription = get_home_url() . '/inscription';
-            wp_redirect($inscription . '?problem');
-        } else {
+        if ($spam_check_ok) {
 
 
-            $fields = all_request_fields();
+            // TO DO CHECK IF ALL NECESSARY FIELDS HAVE BEEN FILLED IN
+
+            // $referer = $_SERVER['HTTP_REFERER'];
+            // $referer =  explode('?',   $referer)[0];
+
+
+            // print_r($_SERVER);
+            // print_r($referer);
+            //print_r($_POST);
+
+            $fullname = $_POST['prenom_student'] . ' ' . $_POST['nom_student'];
 
 
 
-            foreach ($fields as $field => $value) {
-                if (isset($_POST[$field])) {
-                    add_post_meta($new_request, '_' . $field,  $_POST[$field], true);
+            $post = array(
+                'post_title'     => $fullname,
+                'post_status'    => 'publish',
+                'post_type'      => 'request',
+                'post_content'   => ''
+                //      ,     'post_parent'   =>  $_POST['course_id']
+
+            );
+            $new_request = wp_insert_post($post);
+            $schoolname = 'CPMDT';
+            if ($_POST['student_of_cpmdt'] == 'non') {
+                if ($_POST['student_of_other'] == 'CMG') {
+                    $schoolname = 'CMG';
+                } elseif ($_POST['student_of_other'] == 'IJF') {
+                    $schoolname = 'IJD';
+                } else {
+                    $schoolname = 'Pas encore inscrit';
                 }
             }
-            add_post_meta($new_request, '_school_name',  $schoolname, true);
+
+            if ($new_request == 0) {
+                $inscription = get_home_url() . '/inscription';
+                wp_redirect($inscription . '?problem');
+            } else {
+
+
+                $fields = all_request_fields();
 
 
 
-
-
-            $course_id = $_POST['course_id'];
-            $course = get_post($course_id);
-            $course_name = $course->post_title;
-
-
-            $year_name = get_field('annee', 'option');
-
-            $headers = 'From: Cours Complémentaires <inscription@conservatoirepopulaire.ch>' . "\r\n";
-            $emailheader = file_get_contents(dirname(__FILE__) . '/email/email_header.php');
-            $emailheader2 = file_get_contents(dirname(__FILE__) . '/email/email_header_2.php');
-            $emailfooter = file_get_contents(dirname(__FILE__) . '/email/email_footer.php');
-            add_filter('wp_mail_content_type',  'chilly_set_html_mail_content_type');
-
-
-            $himg = get_email_header_image();
-            $emailheaderimage =   '<img src="' . $himg . '" width="100%" height="" border="0" align="left" style="width: 100%; max-width:600px; margin-bottom: 15px;">';
-
-            // EMAIL TO STUDENT
-            $potential_recipients = array($_POST['email_respondent'], $_POST['email_student']);
-            $recipients_student = array_filter(
-                $potential_recipients,
-                function ($r) {
-                    return $r != '';
+                foreach ($fields as $field => $value) {
+                    if (isset($_POST[$field])) {
+                        add_post_meta($new_request, '_' . $field,  $_POST[$field], true);
+                    }
                 }
-            );
+                add_post_meta($new_request, '_school_name',  $schoolname, true);
 
 
-            $subj_student = "Demande d'inscription aux Cours Complémentaires";
-            $body_student = $emailheader . $emailheaderimage . $emailheader2;
-            $body_student .= '
+
+
+
+                $course_id = $_POST['course_id'];
+                $course = get_post($course_id);
+                $course_name = $course->post_title;
+
+
+                $year_name = get_field('annee', 'option');
+
+                $headers = 'From: Cours Complémentaires <inscription@conservatoirepopulaire.ch>' . "\r\n";
+                $emailheader = file_get_contents(dirname(__FILE__) . '/email/email_header.php');
+                $emailheader2 = file_get_contents(dirname(__FILE__) . '/email/email_header_2.php');
+                $emailfooter = file_get_contents(dirname(__FILE__) . '/email/email_footer.php');
+                add_filter('wp_mail_content_type',  'chilly_set_html_mail_content_type');
+
+
+                $himg = get_email_header_image();
+                $emailheaderimage =   '<img src="' . $himg . '" width="100%" height="" border="0" align="left" style="width: 100%; max-width:600px; margin-bottom: 15px;">';
+
+                // EMAIL TO STUDENT
+                $potential_recipients = array($_POST['email_respondent'], $_POST['email_student']);
+                $recipients_student = array_filter(
+                    $potential_recipients,
+                    function ($r) {
+                        return $r != '';
+                    }
+                );
+
+
+                $subj_student = "Demande d'inscription aux Cours Complémentaires";
+                $body_student = $emailheader . $emailheaderimage . $emailheader2;
+                $body_student .= '
             <h1 style="line-height:120%; font-size:20px;">Conservatoire populaire de musique, danse et théâtre</h1>
             Madame, Monsieur,<br><br>
 
@@ -544,23 +556,23 @@ function get_email_from_request_form() {
             Nous vous remercions pour la confiance que vous nous accordez, et vous prions de recevoir nos meilleures salutations. <br><br>
             L\'administration';
 
-            $body_student .= $emailfooter;
+                $body_student .= $emailfooter;
 
-            wp_mail($recipients_student, $subj_student, $body_student, $headers);
-
-
+                wp_mail($recipients_student, $subj_student, $body_student, $headers);
 
 
 
 
-            // EMAIL TO ADMIN
 
-            $recipient_cpmdt = 'inscription@conservatoirepopulaire.ch';
-            // $recipient_cpmdt = 'harvey.charles@gmail.com';
 
-            $subj_cpmdt = 'Confirmation d\'inscription aux Cours Complémentaires';
-            $body_cpmdt =  $emailheader . $emailheaderimage . $emailheader2;
-            $body_cpmdt .= '
+                // EMAIL TO ADMIN
+
+                $recipient_cpmdt = 'inscription@conservatoirepopulaire.ch';
+                // $recipient_cpmdt = 'harvey.charles@gmail.com';
+
+                $subj_cpmdt = 'Confirmation d\'inscription aux Cours Complémentaires';
+                $body_cpmdt =  $emailheader . $emailheaderimage . $emailheader2;
+                $body_cpmdt .= '
             <h1 style="line-height:120%; font-size:20px;">Nouvelle inscription aux cours complémentaires</h1>
 
             <table class="cpmdt_email_table">
@@ -575,16 +587,16 @@ function get_email_from_request_form() {
             <td style="padding:5px" >' . $_POST['teacher_id'] . '</td>
             </tr>
             ';
-            if ($_POST['student_of_cpmdt'] == 'oui') {
-                $body_cpmdt .= '<tr>
+                if ($_POST['student_of_cpmdt'] == 'oui') {
+                    $body_cpmdt .= '<tr>
                 <td style="padding:5px"  colspan="2"><span style="display:block; font-size:14px; text-transform:uppercase; text-align: center; font-weight:bold;">Informations Élève</span></td>
                 <tr>
                 <tr>
                 <td style="padding:5px" >Élève du CPMDT</td>
                 <td style="padding:5px" >' . $_POST['title_student'] . ' ' . $_POST['prenom_student'] . ' ' . $_POST['nom_student'] . '</td>
                 </tr>';
-            } elseif ($_POST['student_of_other'] == 'CMG') {
-                $body_cpmdt .= '<tr>
+                } elseif ($_POST['student_of_other'] == 'CMG') {
+                    $body_cpmdt .= '<tr>
                 <td style="padding:5px" >Élève du CPMDT</td>
                 <td style="padding:5px" >' . $_POST['title_student'] . ' ' . $_POST['prenom_student'] . ' ' . $_POST['nom_student'] . '</td>
                 </tr>
@@ -592,8 +604,8 @@ function get_email_from_request_form() {
                 <td style="padding:5px" >Instrument Principal</td>
                 <td style="padding:5px" >' . $_POST['instrument'] . '</td>
                 </tr>';
-            } elseif ($_POST['student_of_other'] == 'IJD') {
-                $body_cpmdt .= '<tr>
+                } elseif ($_POST['student_of_other'] == 'IJD') {
+                    $body_cpmdt .= '<tr>
                 <td style="padding:5px" >Élève de l\'IJD</td>
                 <td style="padding:5px" >' . $_POST['title_student'] . ' ' . $_POST['prenom_student'] . ' ' . $_POST['nom_student'] . '</td>
                 </tr>
@@ -601,27 +613,27 @@ function get_email_from_request_form() {
                 <td style="padding:5px" >Instrument Principal</td>
                 <td style="padding:5px" >' . $_POST['instrument'] . '</td>
                 </tr>';
-            } elseif ($_POST['student_of_other'] == 'pas_inscrit') {
-                $body_cpmdt .= '<tr>
+                } elseif ($_POST['student_of_other'] == 'pas_inscrit') {
+                    $body_cpmdt .= '<tr>
                 <td style="padding:5px" >Nouvel Élève</td>
                 <td style="padding:5px" >' . $_POST['title_student'] . ' ' . $_POST['prenom_student'] . ' ' . $_POST['nom_student'] . '</td>
                 </tr>';
-            }
+                }
 
-            if (isset($_POST['ondine_genevoise'])) {
-                $body_cpmdt .= '<tr>
+                if (isset($_POST['ondine_genevoise'])) {
+                    $body_cpmdt .= '<tr>
                 <td style="padding:5px" >Êtes-vous élève à l’Ondine genevoise ? </td>
                 <td style="padding:5px" >' . $_POST['ondine_genevoise'] . '</td>
                 </tr>';
-            }
-            if (isset($_POST['ondine_discipline'])) {
-                $body_cpmdt .= '<tr>
+                }
+                if (isset($_POST['ondine_discipline'])) {
+                    $body_cpmdt .= '<tr>
                 <td style="padding:5px" >Si oui, dans quelle discipline ?  </td>
                 <td style="padding:5px" >' . $_POST['ondine_discipline'] . '</td>
                 </tr>';
-            }
+                }
 
-            $body_cpmdt .= '
+                $body_cpmdt .= '
             <tr>
             <td style="padding:5px" >Date de naissance</td>
             <td style="padding:5px" >' . $_POST['date_naissance_student'] . '</td>
@@ -642,9 +654,9 @@ function get_email_from_request_form() {
             <td style="padding:5px" >' . $_POST['locality_student'] . '</td>
             </tr>';
 
-            if (isset($_POST['proper_respondant'])) {
-                if ($_POST['proper_respondant'] == 'non') {
-                    $body_cpmdt .= '
+                if (isset($_POST['proper_respondant'])) {
+                    if ($_POST['proper_respondant'] == 'non') {
+                        $body_cpmdt .= '
                     <tr>
                     <td style="padding:5px"  colspan="2"><span style="display:block; font-size:14px; text-transform:uppercase; text-align: center; font-weight:bold;">Informations Répondant</span></td>
                     <tr>
@@ -679,54 +691,62 @@ function get_email_from_request_form() {
                     <td style="padding:5px" >Paiement de la facture</td>
                     <td style="padding:5px" >Paiement en ' . $_POST['facture'] . '</td>
                     </tr>';
+                    }
                 }
+
+                // if(isset($_POST['authorize'])){
+                //     $body_cpmdt .='
+                //     <tr>
+                //     <td style="padding:5px"  colspan="2"><span style="display:block; font-size:14px; text-transform:uppercase; text-align: center; font-weight:bold;">Photos</span></td>
+                //     </tr>
+                //     <tr>
+                //     <td style="padding:5px"  colspan="2">Les institutions peuvent utiliser des images (photo, vidéos) où apparaît l\'élève / diffusion dans des brochures ou publications uniquement institutionnelles.</td>
+                //     <tr>';
+                // } else {
+                //     $body_cpmdt .='
+                //     <tr>
+                //     <td style="padding:5px"  colspan="2"><span style="display:block; font-size:14px; text-transform:uppercase; text-align: center; font-weight:bold;">Photos</span></td>
+                //     </tr>
+                //     <tr>
+                //     <td style="padding:5px"  colspan="2">Les institutions ne sont pas autorisées à prendre ou diffuser de photos de l\'élève.</td>
+                //     <tr>';
+                //
+                // }
+
+
+                ' </table>
+            ';
+                $body_cpmdt .= $emailfooter;
+
+                wp_mail($recipient_cpmdt, $subj_cpmdt, $body_cpmdt, $headers);
+
+
+
+
+
+
+
+                remove_filter('wp_mail_content_type', 'chilly_set_html_mail_content_type');
+
+
+
+
+
+                //wp_redirect( $referer . '?success' );
+                $redirect = get_home_url() . '/inscription-reussie/';
+                wp_redirect($redirect);
             }
 
-            // if(isset($_POST['authorize'])){
-            //     $body_cpmdt .='
-            //     <tr>
-            //     <td style="padding:5px"  colspan="2"><span style="display:block; font-size:14px; text-transform:uppercase; text-align: center; font-weight:bold;">Photos</span></td>
-            //     </tr>
-            //     <tr>
-            //     <td style="padding:5px"  colspan="2">Les institutions peuvent utiliser des images (photo, vidéos) où apparaît l\'élève / diffusion dans des brochures ou publications uniquement institutionnelles.</td>
-            //     <tr>';
-            // } else {
-            //     $body_cpmdt .='
-            //     <tr>
-            //     <td style="padding:5px"  colspan="2"><span style="display:block; font-size:14px; text-transform:uppercase; text-align: center; font-weight:bold;">Photos</span></td>
-            //     </tr>
-            //     <tr>
-            //     <td style="padding:5px"  colspan="2">Les institutions ne sont pas autorisées à prendre ou diffuser de photos de l\'élève.</td>
-            //     <tr>';
-            //
-            // }
 
-
-            ' </table>
-            ';
-            $body_cpmdt .= $emailfooter;
-
-            wp_mail($recipient_cpmdt, $subj_cpmdt, $body_cpmdt, $headers);
-
-
-
-
-
-
-
-            remove_filter('wp_mail_content_type', 'chilly_set_html_mail_content_type');
-
-
-
-
-
-            //wp_redirect( $referer . '?success' );
-            $redirect = get_home_url() . '/inscription-reussie/';
-            wp_redirect($redirect);
+            exit;
+        } else {
+            // probably spam
+            $inscription = get_home_url() . '/inscription';
+            wp_redirect($inscription . '?problem=sp');
         }
 
 
-        exit;
+
 
 
 
@@ -832,6 +852,7 @@ function request_form_shortcode($atts, $content = null) {
     $rq_frm .= ' <form id="course_form" action="' .  esc_url(admin_url('admin-post.php')) . '" method="post">';
 
 
+    $rq_frm .= '<div id="dnfdnf"><label for="address6">Please do not fill in.</label><input placeholder="please dont fill in"  name="address6" id="address6" /></div>';
 
     $rq_frm .= '<h3>Cours complémentaire</h3>
     <div class="field field_for_select" id="course_id_select_box"><select id="course_id" name="course_id">';

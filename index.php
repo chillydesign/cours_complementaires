@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 <div class="container">
-<div class="row">
+	<div class="row">
 
-		<section  class="col-sm-9">
+		<section class="col-sm-9">
 
-			<h1><?php _e( 'Latest Posts', 'html5blank' ); ?></h1>
+			<h1><?php _e('Latest Posts', 'html5blank'); ?></h1>
 
 			<?php get_template_part('loop'); ?>
 
@@ -13,11 +13,11 @@
 		</section>
 
 
-		<aside class="col-sm-3"  role="complementary">
-			<?php  get_sidebar(); ?>
+		<aside class="col-sm-3" role="complementary">
+			<?php get_sidebar(); ?>
 		</aside>
 
-</div>
+	</div>
 </div>
 
 
