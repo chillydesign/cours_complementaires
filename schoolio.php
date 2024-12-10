@@ -798,7 +798,7 @@ function get_all_current_courses() {
             'order' => 'ASC',
             'orderby' => 'title',
             'posts_per_page' => -1,
-            'post_status' => 'published'
+            'post_status' => 'publish'
 
         )
     );
