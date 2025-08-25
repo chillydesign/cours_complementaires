@@ -15,6 +15,8 @@ External Modules/Files
 Theme Support
 \*------------------------------------*/
 
+
+include('env.php');
 define("MAPS_TOKEN", getenv('MAPS_TOKEN'));
 
 
