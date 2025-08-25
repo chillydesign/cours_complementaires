@@ -15,6 +15,9 @@ External Modules/Files
 Theme Support
 \*------------------------------------*/
 
+define("MAPS_TOKEN", getenv('MAPS_TOKEN'));
+
+
 if (!isset($content_width)) {
     $content_width = 900;
 }

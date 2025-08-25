@@ -4,12 +4,12 @@
 <footer id="footer" class="footer" role="contentinfo">
     <div class="container">
         <div class="row">
-            <p class="col-sm-4"><a href="https://courscomplementaires.ch/cours-complementaires-impression/"><i class="fa fa-print"></i> Version imprimable</a><br>&copy; <?php echo date('Y'); ?>  | <a href="https://webfactor.ch">Website by Webfactor</a></p>
+            <p class="col-sm-4"><a href="https://courscomplementaires.ch/cours-complementaires-impression/"><i class="fa fa-print"></i> Version imprimable</a><br>&copy; <?php echo date('Y'); ?> | <a href="https://webfactor.ch">Website by Webfactor</a></p>
 
             <ul class="col-sm-8" id="partners">
-                <li><a><img src="<?php echo $tdu; ?>/img/artistiqua.png"  alt="logo" />artistiqua</a></li>
-                <li><a><img src="<?php echo $tdu; ?>/img/cegmwhite.png"  alt="logo" />CEGM</a></li>
-                <li><a><img src="<?php echo $tdu; ?>/img/geneve.png"  alt="logo" />avec le soutien de la République et canton de Genève</a></li>
+                <li><a><img src="<?php echo $tdu; ?>/img/artistiqua.png" alt="logo" />artistiqua</a></li>
+                <li><a><img src="<?php echo $tdu; ?>/img/cegmwhite.png" alt="logo" />CEGM</a></li>
+                <li><a><img src="<?php echo $tdu; ?>/img/geneve.png" alt="logo" />avec le soutien de la République et canton de Genève</a></li>
             </ul>
         </div>
     </div>
@@ -20,7 +20,7 @@
 
 <script type="text/javascript" src="<?php echo $tdu; ?>/js/underscore.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="//maps.google.com/maps/api/js?key=AIzaSyAXUQ-XwYU2zw4L1HDhFQzjXKv8CRY7dYk"></script>
+<script src="//maps.google.com/maps/api/js?key=<?php echo MAPS_TOKEN; ?>"></script>
 <script type="text/javascript" src="<?php echo $tdu; ?>/js/lib/modernizr-2.7.1.min.js"></script>
 <script type="text/javascript" src="<?php echo $tdu; ?>/js/unslider-min.js"></script>
 <script type="text/javascript" src="<?php echo $tdu; ?>/js/matchHeight.min.js"></script>
@@ -29,15 +29,22 @@
 
 <!-- analytics -->
 <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-ga('create', 'UA-96353592-1', 'auto');
-ga('send', 'pageview');
-
+    ga('create', 'UA-96353592-1', 'auto');
+    ga('send', 'pageview');
 </script>
 <div id="bg"></div>
 </body>
+
 </html>
